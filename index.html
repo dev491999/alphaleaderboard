@@ -312,9 +312,6 @@
           <span id="meta-finishers">Finishers: 0</span>
           <span id="meta-updated">Last update: —</span>
         </div>
-        <div class="legend" id="color-legend">
-          <!-- filled by JS from COLORS -->
-        </div>
       </div>
 
       <div class="leaderboard-wrapper">
@@ -353,14 +350,7 @@
       console.error("Firebase Initialization Error", error.message);
     }
 
-    // 2. Shared constants (same COLORS as tracking app)
-    const COLORS = [
-      { name: "Red",    hex: "#c0152f", abbr: "RE" },
-      { name: "Green",  hex: "#228c3d", abbr: "GR" },
-      { name: "Blue",   hex: "#2180ff", abbr: "BL" },
-      { name: "Yellow", hex: "#e68161", abbr: "YE" },
-      { name: "Pink",   hex: "#ef4899", abbr: "PI" }
-    ];
+
 
     // 3. Participant mapping (BIB -> name, wave)
     // This file now loads `participants.json` (generated from your CSV) at runtime.
@@ -392,15 +382,7 @@
             String(centis).padStart(2, '0');
     } // [web:15]
 
-    function renderLegend() {
-      const legend = document.getElementById("color-legend");
-      legend.innerHTML = COLORS.map(c => `
-        <div class="legend-item" title="${c.name}">
-          <span class="legend-swatch" style="background:${c.hex}"></span>
-          <span class="legend-abbr">${c.abbr}</span>
-        </div>
-      `).join("");
-    }
+    
 
     function updateMeta(finishersCount) {
       const finishersEl = document.getElementById("meta-finishers");
@@ -481,7 +463,6 @@
 
     document.addEventListener("DOMContentLoaded", () => {
       loadParticipants().then(() => {
-        renderLegend();
         startSyncListeners();
       });
     });
