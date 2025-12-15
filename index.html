@@ -399,9 +399,10 @@
       const minutes = Math.floor(totalSeconds / 60);
       const seconds = totalSeconds % 60;
       const centis = Math.floor(ms / 10) % 100;
-      return String(minutes).padStart(2, '0') +
-             String(seconds).padStart(2, '0') +
-             String(centis).padStart(2, '0');
+          // format as MM:SS:CC (minutes:seconds:centiseconds)
+          return String(minutes).padStart(2, '0') + ':' +
+            String(seconds).padStart(2, '0') + ':' +
+            String(centis).padStart(2, '0');
     } // [web:15]
 
     function renderLegend() {
