@@ -133,6 +133,9 @@
       color: #666;
     }
 
+    /* Legend abbreviation */
+    .legend-abbr { font-size: 11px; color: #666; margin-left: 4px; }
+
     .legend-swatch {
       width: 12px;
       height: 12px;
@@ -153,6 +156,21 @@
       font-size: 14px;
       overflow: hidden;
       border-radius: 10px;
+    }
+
+    /* responsive table wrapper for small screens */
+    .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+    .leaderboard-table { min-width: 640px; /* allow horizontal scroll on small screens */ }
+
+    .color-cell .color-swatch {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      display: inline-block;
+      border: 1px solid rgba(0,0,0,0.08);
+      vertical-align: middle;
+      margin-right: 6px;
     }
 
     .leaderboard-table thead {
@@ -253,6 +271,32 @@
       .leaderboard-table td:nth-child(4) {
         display: none; /* hide Wave on narrow screens */
       }
+      .table-wrap { overflow-x: auto; }
+      /* hide BIB on small screens to reduce horizontal width */
+      .leaderboard-table th:nth-child(3),
+      .leaderboard-table td:nth-child(3) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .header h1 { font-size: 18px; }
+      .leaderboard-table { font-size: 13px; }
+      .leaderboard-table { min-width: 520px; }
+    }
+
+    /* very small screens: show swatch inside name, hide color column */
+    .name-with-swatch .color-swatch { display: none; }
+    @media (max-width: 420px) {
+      .container { padding: 12px; }
+      .header { padding: 12px 12px 8px 12px; }
+      .header-right { margin-top: 6px; }
+      .name-with-swatch .color-swatch { display: inline-block; margin-right: 8px; width: 12px; height: 12px; border-radius: 3px; vertical-align: middle; border: 1px solid rgba(0,0,0,0.08); }
+      .leaderboard-table th:nth-child(5),
+      .leaderboard-table td:nth-child(5) { display: none; }
+      /* further trim columns: keep Rank, Name, Time only */
+      .leaderboard-table th:nth-child(2),
+      .leaderboard-table td:nth-child(2) { min-width: 160px; }
     }
   </style>
 
@@ -361,9 +405,9 @@
     function renderLegend() {
       const legend = document.getElementById("color-legend");
       legend.innerHTML = COLORS.map(c => `
-        <div class="legend-item">
+        <div class="legend-item" title="${c.name}">
           <span class="legend-swatch" style="background:${c.hex}"></span>
-          <span>${c.name}</span>
+          <span class="legend-abbr">${c.abbr}</span>
         </div>
       `).join("");
     }
@@ -412,7 +456,9 @@
         const displayName = p ? p.name : "Unknown";
         const displayWave = p ? p.wave : (item.waveNumber || "");
         const colorData = COLORS.find(c => c.name === item.color);
-        const colorStyle = colorData ? `style="color:${colorData.hex};font-weight:600"` : "";
+        const colorCell = colorData
+          ? `<span class="color-swatch" style="background:${colorData.hex}" title="${colorData.name}"></span><span class="color-abbr">${colorData.abbr}</span>`
+          : (item.color || "");
         const timeFormatted = formatTime(item.timeMs);
 
         html += `
@@ -421,14 +467,14 @@
             <td class="name-cell">${displayName}</td>
             <td class="bib-cell">${bib}</td>
             <td class="wave-cell">${displayWave}</td>
-            <td ${colorStyle}>${item.color || ""}</td>
+            <td class="color-cell">${colorCell}</td>
             <td class="time-cell">${timeFormatted}</td>
           </tr>
         `;
       });
 
       html += "</tbody></table>";
-      container.innerHTML = html;
+      container.innerHTML = `<div class="table-wrap">${html}</div>`;
       updateMeta(stoppedTimes.length);
     }
 
