@@ -13,7 +13,11 @@
       --bg-soft: #fafafa;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -26,19 +30,20 @@
     }
 
     .container {
-      width: 100%;
       max-width: 1100px;
+      width: 100%;
       background: #fff;
       border-radius: 16px;
-      box-shadow: 0 18px 45px rgba(0,0,0,.18);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.18);
       overflow: hidden;
       display: flex;
       flex-direction: column;
     }
 
+    /* Header */
     header {
       padding: 22px 26px 14px;
-      border-bottom: 1px solid rgba(0,0,0,.06);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -46,7 +51,7 @@
 
     header h1 {
       font-size: 22px;
-      letter-spacing: .06em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
     }
 
@@ -64,8 +69,8 @@
       font-size: 11px;
       font-weight: 600;
       color: var(--primary);
-      border: 1px solid rgba(255,23,68,.45);
-      background: rgba(255,23,68,.08);
+      border: 1px solid rgba(255,23,68,0.45);
+      background: rgba(255,23,68,0.08);
     }
 
     .dot {
@@ -73,10 +78,12 @@
       height: 7px;
       background: var(--primary);
       border-radius: 50%;
-      box-shadow: 0 0 0 5px rgba(255,23,68,.3);
+      box-shadow: 0 0 0 5px rgba(255,23,68,0.3);
     }
 
-    main { padding: 18px 22px 22px; }
+    main {
+      padding: 18px 22px 22px;
+    }
 
     .meta-bar {
       display: flex;
@@ -86,6 +93,7 @@
       margin-bottom: 14px;
     }
 
+    /* Tabs */
     .tabs {
       display: flex;
       gap: 8px;
@@ -108,6 +116,7 @@
       border-color: var(--primary);
     }
 
+    /* Podium */
     .podium-title {
       text-align: center;
       font-size: 14px;
@@ -119,43 +128,69 @@
       display: flex;
       justify-content: center;
       align-items: flex-end;
-      gap: 12px;
-      margin-bottom: 20px;
+      gap: 10px;
+      margin-bottom: 18px;
     }
 
-    .podium-card {
-      width: 140px;
-      background: #fff;
-      border-radius: 14px;
-      padding: 14px;
+    .podium .card {
+      width: 132px;
+      border-radius: 12px;
+      padding: 12px;
       text-align: center;
-      box-shadow: 0 10px 25px rgba(0,0,0,.12);
+      background: #fff;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
     }
 
-    .podium-card.first {
-      transform: translateY(-12px);
-      border: 2px solid gold;
+    .podium .card.first {
+      transform: translateY(-14px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.18);
     }
 
-    .podium-card.second { border: 2px solid silver; }
-    .podium-card.third  { border: 2px solid #cd7f32; }
+    .podium .card:not(.first) {
+      opacity: 0.93;
+    }
 
-    .podium-rank { font-size: 12px; opacity: .6; font-weight: 700; }
-    .podium-name { margin-top: 6px; font-weight: 600; }
-    .podium-time {
-      margin-top: 4px;
-      font-family: monospace;
+    .podium .pos {
       font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: #666;
     }
 
+    .podium .card.first .pos {
+      color: #d4af37;
+    }
+
+    .podium .name {
+      margin-top: 6px;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 1.2;
+      min-height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .podium .time {
+      margin-top: 6px;
+      font-family: "SF Mono", monospace;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* Table */
     .leaderboard-wrapper {
       background: var(--bg-soft);
       border-radius: 12px;
       padding: 14px;
-      border: 1px solid rgba(0,0,0,.04);
+      border: 1px solid rgba(0,0,0,0.04);
     }
 
-    .table-wrap { overflow-x: auto; }
+    .table-wrap {
+      overflow-x: auto;
+    }
 
     table {
       width: 100%;
@@ -169,13 +204,26 @@
       color: #fff;
     }
 
-    th, td { padding: 10px 12px; text-align: left; }
+    th, td {
+      padding: 10px 12px;
+      text-align: left;
+    }
 
-    tbody tr:nth-child(even) { background: #f5f5f5; }
+    tbody tr:nth-child(even) {
+      background: #f5f5f5;
+    }
 
-    .rank { font-weight: 700; }
-    .bib, .time { font-family: monospace; }
-    .time { font-weight: 700; }
+    .rank {
+      font-weight: 700;
+    }
+
+    .bib, .time {
+      font-family: "SF Mono", monospace;
+    }
+
+    .time {
+      font-weight: 700;
+    }
 
     .empty {
       text-align: center;
@@ -185,7 +233,7 @@
 
     footer {
       padding: 10px 18px 14px;
-      border-top: 1px solid rgba(0,0,0,.06);
+      border-top: 1px solid rgba(0,0,0,0.06);
       font-size: 11px;
       color: #888;
       display: flex;
@@ -219,7 +267,7 @@
       <button class="tab" data-view="F">Women</button>
     </div>
 
-    <h2 class="podium-title">Top 3 – Men</h2>
+    <div class="podium-title" id="podium-title">Top 3 – Men</div>
     <div id="podium" class="podium"></div>
 
     <div class="leaderboard-wrapper">
@@ -259,8 +307,8 @@
   function format(ms) {
     ms = Math.max(0, ms || 0);
     const m = Math.floor(ms / 60000);
-    const s = Math.floor(ms % 60000 / 1000);
-    const c = Math.floor(ms % 1000 / 10);
+    const s = Math.floor((ms % 60000) / 1000);
+    const c = Math.floor((ms % 1000) / 10);
     return `${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}:${String(c).padStart(2,"0")}`;
   }
 
@@ -279,28 +327,30 @@
   function renderPodium(list) {
     const el = document.getElementById("podium");
     el.innerHTML = "";
+
     const top = list.slice(0,3);
     const order = [1,0,2];
-    const cls = ["second","first","third"];
+    const classes = ["second","first","third"];
 
     order.forEach((i,idx) => {
       const p = top[i];
       if (!p) {
-        el.innerHTML += `<div class="podium-card ${cls[idx]}"></div>`;
+        el.innerHTML += `<div class="card ${classes[idx]}"></div>`;
         return;
       }
       const person = PARTICIPANTS[p.bib] || {};
       el.innerHTML += `
-        <div class="podium-card ${cls[idx]}">
-          <div class="podium-rank">#${i+1}</div>
-          <div class="podium-name">${person.name || "Unknown"}</div>
-          <div class="podium-time">${format(p.timeMs)}</div>
+        <div class="card ${classes[idx]}">
+          <div class="pos">#${i+1}</div>
+          <div class="name">${person.name || "Unknown"}</div>
+          <div class="time">${format(p.timeMs)}</div>
         </div>`;
     });
   }
 
   function renderTable(list) {
     const el = document.getElementById("leaderboard");
+
     if (!list.length) {
       el.innerHTML = `<div class="empty">No finishers yet.</div>`;
       updateMeta(0);
@@ -330,7 +380,7 @@
     const list = getList();
     renderPodium(list);
     renderTable(list);
-    document.querySelector(".podium-title").textContent =
+    document.getElementById("podium-title").textContent =
       VIEW === "M" ? "Top 3 – Men" : "Top 3 – Women";
   }
 
