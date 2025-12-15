@@ -107,4 +107,352 @@
       color: #777;
     }
 
-    .meta-left span +
+    .meta-left span + span {
+      margin-left: 12px;
+      position: relative;
+    }
+
+    .meta-left span + span::before {
+      content: "•";
+      position: absolute;
+      left: -9px;
+      color: #bbb;
+    }
+
+    .legend {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: #666;
+    }
+
+    .legend-swatch {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .leaderboard-wrapper {
+      background: #fafafa;
+      border-radius: 12px;
+      padding: 14px;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .leaderboard-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .leaderboard-table thead {
+      background: linear-gradient(135deg, #ff1744, #000000);
+      color: #ffffff;
+    }
+
+    .leaderboard-table th,
+    .leaderboard-table td {
+      padding: 10px 12px;
+      text-align: left;
+    }
+
+    .leaderboard-table th {
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+      white-space: nowrap;
+    }
+
+    .leaderboard-table tbody tr:nth-child(odd) {
+      background: #ffffff;
+    }
+
+    .leaderboard-table tbody tr:nth-child(even) {
+      background: #f5f5f5;
+    }
+
+    .leaderboard-table tbody tr:hover {
+      background: rgba(255, 23, 68, 0.06);
+      transition: background 140ms ease-out;
+    }
+
+    .leaderboard-table tbody tr:first-child td {
+      background: #fff7e3;
+      font-weight: 700;
+      border-bottom: 1px solid rgba(255, 184, 0, 0.4);
+    }
+
+    .rank-cell {
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      width: 1%;
+      white-space: nowrap;
+    }
+
+    .name-cell {
+      font-weight: 500;
+    }
+
+    .bib-cell {
+      font-family: "SF Mono", "Menlo", monospace;
+      font-size: 13px;
+    }
+
+    .wave-cell {
+      font-size: 12px;
+      color: #555;
+    }
+
+    .time-cell {
+      font-family: "SF Mono", "Menlo", monospace;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.03em;
+    }
+
+    .empty-state {
+      padding: 26px 10px;
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+    }
+
+    .footer-bar {
+      padding: 10px 18px 14px 18px;
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: #888;
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .meta-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+      .leaderboard-table th:nth-child(4),
+      .leaderboard-table td:nth-child(4) {
+        display: none; /* hide Wave on narrow screens */
+      }
+    }
+  </style>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-left">
+        <h1>Alpha Run Club</h1>
+        <p>Alpha Arena • Live Results Leaderboard</p>
+      </div>
+      <div class="header-right">
+        <span class="badge-live">
+          <span class="dot"></span>
+          Live synced
+        </span>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="meta-bar">
+        <div class="meta-left">
+          <span id="meta-finishers">Finishers: 0</span>
+          <span id="meta-updated">Last update: —</span>
+        </div>
+        <div class="legend" id="color-legend">
+          <!-- filled by JS from COLORS -->
+        </div>
+      </div>
+
+      <div class="leaderboard-wrapper">
+        <div id="public-leaderboard">
+          <div class="empty-state">Waiting for first finisher…</div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer-bar">
+      <span>alpha-runclub.in • Spectator leaderboard</span>
+      <span>Powered by Alpha Run Club timing</span>
+    </footer>
+  </div>
+
+  <script>
+    // 1. Firebase config - same project as your tracking app
+    const firebaseConfig = {
+      apiKey: "AIzaSyDJkHOV1KVUfCbblgMvlO76u0Ui3J1k1sg",
+      authDomain: "arena-stopwatch.firebaseapp.com",
+      databaseURL: "https://arena-stopwatch-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "arena-stopwatch",
+      storageBucket: "arena-stopwatch.firebasestorage.app",
+      messagingSenderId: "194588204548",
+      appId: "1:194588204548:web:d77a14dc5ea208e525df51",
+      measurementId: "G-P31XYVGJ2Q"
+    };
+
+    let db = null;
+    let globalStoppedTimes = [];
+
+    try {
+      firebase.initializeApp(firebaseConfig);
+      db = firebase.database();
+    } catch (error) {
+      console.error("Firebase Initialization Error", error.message);
+    }
+
+    // 2. Shared constants (same COLORS as tracking app)
+    const COLORS = [
+      { name: "Red",    hex: "#c0152f", abbr: "RE" },
+      { name: "Green",  hex: "#228c3d", abbr: "GR" },
+      { name: "Blue",   hex: "#2180ff", abbr: "BL" },
+      { name: "Yellow", hex: "#e68161", abbr: "YE" },
+      { name: "Pink",   hex: "#ef4899", abbr: "PI" }
+    ];
+
+    // 3. Participant mapping (BIB -> name, wave) – demo subset from alpha-arena-Participants.csv
+    // IMPORTANT: extend this with all AW001..AWxxx before race day. [file:14]
+    const PARTICIPANTS = {
+      "AW001": { name: "Vyankatesh Mahesh Joshi", wave: "10" },
+      "AW002": { name: "Anjali Angadi", wave: "10" },
+      "AW003": { name: "Prasad Devendra Tilak", wave: "10" },
+      "AW004": { name: "Payal Sanas", wave: "10" },
+      "AW005": { name: "Arya Kshirsagar", wave: "10" },
+      "AW006": { name: "Aakanksha B", wave: "20" },
+      "AW007": { name: "Dharaa S Jalan", wave: "20" },
+      "AW008": { name: "Vidhi Dahad", wave: "20" },
+      "AW009": { name: "Aryan Dharmadhikari", wave: "20" }
+      // ...continue mapping all participants like above using your CSV
+    };
+
+    // 4. Utility functions
+    function formatTime(ms) {
+      if (!ms || ms < 0) ms = 0;
+      const totalSeconds = Math.floor(ms / 1000);
+      const minutes = Math.floor(totalSeconds / 60);
+      const seconds = totalSeconds % 60;
+      const centis = Math.floor(ms / 10) % 100;
+      return String(minutes).padStart(2, '0') +
+             String(seconds).padStart(2, '0') +
+             String(centis).padStart(2, '0');
+    } // [web:15]
+
+    function renderLegend() {
+      const legend = document.getElementById("color-legend");
+      legend.innerHTML = COLORS.map(c => `
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:${c.hex}"></span>
+          <span>${c.name}</span>
+        </div>
+      `).join("");
+    }
+
+    function updateMeta(finishersCount) {
+      const finishersEl = document.getElementById("meta-finishers");
+      const updatedEl = document.getElementById("meta-updated");
+      finishersEl.textContent = "Finishers: " + finishersCount;
+      const now = new Date();
+      updatedEl.textContent = "Last update: " +
+        now.toLocaleTimeString(undefined, { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+    }
+
+    // 5. Render leaderboard
+    function renderPublicLeaderboard() {
+      const container = document.getElementById("public-leaderboard");
+
+      let stoppedTimes = globalStoppedTimes || [];
+      if (!stoppedTimes.length) {
+        container.innerHTML = '<div class="empty-state">No finishers recorded yet.</div>';
+        updateMeta(0);
+        return;
+      }
+
+      // sort by time ascending
+      stoppedTimes = [...stoppedTimes].sort((a, b) => a.timeMs - b.timeMs);
+
+      let html = `
+        <table class="leaderboard-table">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Name</th>
+              <th>BIB</th>
+              <th>Wave</th>
+              <th>Color</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+
+      stoppedTimes.forEach((item, index) => {
+        const bib = item.bib || "NA";
+        const p = bib && PARTICIPANTS[bib] ? PARTICIPANTS[bib] : null;
+        const displayName = p ? p.name : "Unknown";
+        const displayWave = p ? p.wave : (item.waveNumber || "");
+        const colorData = COLORS.find(c => c.name === item.color);
+        const colorStyle = colorData ? `style="color:${colorData.hex};font-weight:600"` : "";
+        const timeFormatted = formatTime(item.timeMs);
+
+        html += `
+          <tr>
+            <td class="rank-cell">${index + 1}</td>
+            <td class="name-cell">${displayName}</td>
+            <td class="bib-cell">${bib}</td>
+            <td class="wave-cell">${displayWave}</td>
+            <td ${colorStyle}>${item.color || ""}</td>
+            <td class="time-cell">${timeFormatted}</td>
+          </tr>
+        `;
+      });
+
+      html += "</tbody></table>";
+      container.innerHTML = html;
+      updateMeta(stoppedTimes.length);
+    }
+
+    // 6. Sync from Firebase leaderboard node
+    function startSyncListeners() {
+      if (!db) return;
+      db.ref().on("value", (snapshot) => {
+        const data = snapshot.val();
+        if (!data) {
+          globalStoppedTimes = [];
+          renderPublicLeaderboard();
+          return;
+        }
+        globalStoppedTimes = data.leaderboard
+          ? Object.values(data.leaderboard).filter(Boolean)
+          : [];
+        renderPublicLeaderboard();
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderLegend();
+      startSyncListeners();
+    });
+  </script>
+</body>
+</html>
