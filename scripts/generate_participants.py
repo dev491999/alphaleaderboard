@@ -19,9 +19,8 @@ for r in rows:
     if not bib:
         continue
     name = r.get('Name','').strip()
-    wave = r.get('Wave','').strip()
     gender = r.get('Gender','').strip() if 'Gender' in rows[0] else r.get('gender','').strip() if 'gender' in rows[0] else ''
-    out[bib] = {'name': name, 'wave': wave, 'gender': gender}
+    out[bib] = {'name': name, 'gender': gender}
 
 with json_path.open('w', encoding='utf-8') as f:
     json.dump(out, f, ensure_ascii=False, indent=2)

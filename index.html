@@ -198,10 +198,7 @@
       font-size: 13px;
     }
 
-    .wave-cell {
-      font-size: 12px;
-      color: #555;
-    }
+    
 
     .time-cell {
       font-family: "SF Mono", "Menlo", monospace;
@@ -237,10 +234,7 @@
         align-items: flex-start;
         gap: 6px;
       }
-      .leaderboard-table th:nth-child(4),
-      .leaderboard-table td:nth-child(4) {
-        display: none; /* hide Wave on narrow screens */
-      }
+      /* keep Time visible on narrow screens; only hide BIB (3rd column) */
       .table-wrap { overflow-x: auto; }
       /* hide BIB on small screens to reduce horizontal width */
       .leaderboard-table th:nth-child(3),
@@ -348,7 +342,7 @@
 
 
 
-    // 3. Participant mapping (BIB -> name, wave)
+    // 3. Participant mapping (BIB -> name, gender)
     // This file now loads `participants.json` (generated from your CSV) at runtime.
     let PARTICIPANTS = {};
 
