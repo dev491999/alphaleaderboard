@@ -13,11 +13,7 @@
       --bg-soft: #fafafa;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -40,24 +36,48 @@
       flex-direction: column;
     }
 
-    /* Header */
+    /* ===== HEADER ===== */
     header {
-      padding: 22px 26px 14px;
+      padding: 18px 22px;
       border-bottom: 1px solid rgba(0,0,0,0.06);
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      column-gap: 16px;
+    }
+
+    .logo {
       display: flex;
-      justify-content: space-between;
       align-items: center;
     }
 
-    header h1 {
-      font-size: 22px;
+    .logo img {
+      height: 34px;
+      width: auto;
+      display: block;
+    }
+
+    .header-center {
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .header-center h1 {
+      font-size: 20px;
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
 
-    header p {
-      font-size: 13px;
+    .header-center p {
+      font-size: 12px;
       color: #666;
+      margin-top: 2px;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     .badge-live {
@@ -71,6 +91,7 @@
       color: var(--primary);
       border: 1px solid rgba(255,23,68,0.45);
       background: rgba(255,23,68,0.08);
+      white-space: nowrap;
     }
 
     .dot {
@@ -81,6 +102,7 @@
       box-shadow: 0 0 0 5px rgba(255,23,68,0.3);
     }
 
+    /* ===== MAIN ===== */
     main {
       padding: 18px 22px 22px;
     }
@@ -93,7 +115,6 @@
       margin-bottom: 14px;
     }
 
-    /* Tabs */
     .tabs {
       display: flex;
       gap: 8px;
@@ -116,7 +137,7 @@
       border-color: var(--primary);
     }
 
-    /* Podium */
+    /* ===== PODIUM ===== */
     .podium-title {
       text-align: center;
       font-size: 14px;
@@ -180,7 +201,7 @@
       font-weight: 600;
     }
 
-    /* Table */
+    /* ===== TABLE ===== */
     .leaderboard-wrapper {
       background: var(--bg-soft);
       border-radius: 12px;
@@ -188,9 +209,7 @@
       border: 1px solid rgba(0,0,0,0.04);
     }
 
-    .table-wrap {
-      overflow-x: auto;
-    }
+    .table-wrap { overflow-x: auto; }
 
     table {
       width: 100%;
@@ -209,21 +228,11 @@
       text-align: left;
     }
 
-    tbody tr:nth-child(even) {
-      background: #f5f5f5;
-    }
+    tbody tr:nth-child(even) { background: #f5f5f5; }
 
-    .rank {
-      font-weight: 700;
-    }
-
-    .bib, .time {
-      font-family: "SF Mono", monospace;
-    }
-
-    .time {
-      font-weight: 700;
-    }
+    .rank { font-weight: 700; }
+    .bib, .time { font-family: "SF Mono", monospace; }
+    .time { font-weight: 700; }
 
     .empty {
       text-align: center;
@@ -239,6 +248,21 @@
       display: flex;
       justify-content: space-between;
     }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 640px) {
+      header {
+        grid-template-columns: auto 1fr;
+        grid-template-areas:
+          "left right"
+          "center center";
+        row-gap: 8px;
+      }
+
+      .logo.left { grid-area: left; }
+      .header-right { grid-area: right; justify-content: flex-end; }
+      .header-center { grid-area: center; }
+    }
   </style>
 
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
@@ -249,11 +273,19 @@
 <div class="container">
 
   <header>
-    <div>
+    <div class="logo left">
+      <img src="assets/logos/alpha-run-club-logo.png" alt="Alpha Run Club">
+    </div>
+
+    <div class="header-center">
       <h1>Alpha Run Club</h1>
       <p>Alpha Arena • Live Results Leaderboard</p>
     </div>
-    <span class="badge-live"><span class="dot"></span>Live</span>
+
+    <div class="header-right">
+      <img src="assets/logos/alpha-arena-logo.png" alt="Alpha Arena" style="height:32px">
+      <span class="badge-live"><span class="dot"></span>Live</span>
+    </div>
   </header>
 
   <main>
@@ -286,7 +318,7 @@
 
 <script>
   const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
+    apiKey: "AIzaSyDJkHOV1KVUfCbblgMvlO76u0Ui3J1k1sg",
     authDomain: "arena-stopwatch.firebaseapp.com",
     databaseURL: "https://arena-stopwatch-default-rtdb.asia-southeast1.firebasedatabase.app",
     projectId: "arena-stopwatch"
