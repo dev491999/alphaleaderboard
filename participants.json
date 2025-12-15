@@ -1,143 +1,997 @@
 {
-  "AW001": { "name": "Vyankatesh Mahesh Joshi", "wave": "1" },
-  "AW002": { "name": "Anjali Angadi", "wave": "1" },
-  "AW003": { "name": "Prasad Devendra Tilak", "wave": "1" },
-  "AW004": { "name": "Payal Sanas", "wave": "1" },
-  "AW005": { "name": "Arya Kshirsagar", "wave": "1" },
-  "AW006": { "name": "Aakanksha B", "wave": "2" },
-  "AW007": { "name": "Dharaa S Jalan", "wave": "2" },
-  "AW008": { "name": "Vidhi Dahad", "wave": "2" },
-  "AW009": { "name": "Aryan Dharmadhikari", "wave": "2" },
-  "AW010": { "name": "Soham Bapat", "wave": "2" },
-  "AW011": { "name": "Sameeran Mokashi", "wave": "3" },
-  "AW012": { "name": "Parth Venkatraman", "wave": "3" },
-  "AW013": { "name": "Shreeshail Chitpur", "wave": "3" },
-  "AW014": { "name": "Yashashree Patel", "wave": "3" },
-  "AW015": { "name": "Rohit chavan", "wave": "3" },
-  "AW016": { "name": "Amal Shukla", "wave": "4" },
-  "AW017": { "name": "Reshma Sarsar", "wave": "4" },
-  "AW018": { "name": "Gandharva Gavai", "wave": "4" },
-  "AW019": { "name": "Vipul Jayantilal mali", "wave": "4" },
-  "AW020": { "name": "Minakshi Deokar", "wave": "4" },
-  "AW021": { "name": "Ayush Yadav", "wave": "5" },
-  "AW022": { "name": "Srushti Bhujbal", "wave": "5" },
-  "AW023": { "name": "Chaitanya Bidkar", "wave": "5" },
-  "AW024": { "name": "Shriansh Vaishnava", "wave": "5" },
-  "AW025": { "name": "Samridh Saini", "wave": "5" },
-  "AW026": { "name": "Aditya Anand Mali", "wave": "6" },
-  "AW027": { "name": "Dhruv chaudhary", "wave": "6" },
-  "AW028": { "name": "AYUSH JAIN", "wave": "6" },
-  "AW029": { "name": "Meenal Deogaonkar", "wave": "6" },
-  "AW030": { "name": "Shreyas", "wave": "6" },
-  "AW031": { "name": "Arjun Vishwakarma", "wave": "7" },
-  "AW032": { "name": "Atharva Sunder", "wave": "7" },
-  "AW033": { "name": "Anaya ghate", "wave": "7" },
-  "AW034": { "name": "Vishal Shivmurat Chaurasiya", "wave": "7" },
-  "AW035": { "name": "Siddhi Yogesh Bhosekar", "wave": "7" },
-  "AW036": { "name": "Kunal Kshirsagar", "wave": "8" },
-  "AW037": { "name": "Ameya Phatak", "wave": "8" },
-  "AW038": { "name": "Bhargavi Salunkhe", "wave": "8" },
-  "AW039": { "name": "Bhuvanesh Kamble", "wave": "8" },
-  "AW040": { "name": "Atharv Balkawade", "wave": "8" },
-  "AW041": { "name": "Rutik Sanjay Shirke", "wave": "9" },
-  "AW042": { "name": "Adhya Dubey", "wave": "9" },
-  "AW043": { "name": "Jay Shah", "wave": "9" },
-  "AW044": { "name": "Amit Pile", "wave": "9" },
-  "AW045": { "name": "Swaraj Chavan", "wave": "9" },
-  "AW046": { "name": "Nikita Kakade", "wave": "10" },
-  "AW047": { "name": "Akash Kelkar", "wave": "10" },
-  "AW048": { "name": "Snehal Khemnar", "wave": "10" },
-  "AW049": { "name": "Atharva Kakade", "wave": "10" },
-  "AW050": { "name": "Parth Pramod Ligade", "wave": "10" },
-  "AW051": { "name": "Pushkar zimbre", "wave": "11" },
-  "AW052": { "name": "Deepak Saraswat", "wave": "11" },
-  "AW053": { "name": "Aadya Kadam", "wave": "11" },
-  "AW054": { "name": "Prajwal Dnyaneshwar Waghole", "wave": "11" },
-  "AW055": { "name": "Mitali Bhindwale", "wave": "11" },
-  "AW056": { "name": "Guru", "wave": "12" },
-  "AW057": { "name": "Saurabh Badole", "wave": "12" },
-  "AW058": { "name": "Sangram Rajput", "wave": "12" },
-  "AW059": { "name": "Akshay Shinde", "wave": "12" },
-  "AW060": { "name": "Tanvi Bhargaw", "wave": "12" },
-  "AW061": { "name": "Kshitija Purohit", "wave": "13" },
-  "AW062": { "name": "Rutvi Paithankar", "wave": "13" },
-  "AW063": { "name": "Varadraj Boramanikar", "wave": "13" },
-  "AW064": { "name": "Vivaan", "wave": "13" },
-  "AW065": { "name": "Chaitanya Ashtekar", "wave": "13" },
-  "AW066": { "name": "Saundarya Tambe", "wave": "14" },
-  "AW067": { "name": "LINO SHINU", "wave": "14" },
-  "AW068": { "name": "Shriya velhal", "wave": "14" },
-  "AW069": { "name": "Sakshi Pednekar", "wave": "14" },
-  "AW070": { "name": "Piyush Kolhatkar", "wave": "14" },
-  "AW071": { "name": "Malhar Tamhankar", "wave": "15" },
-  "AW072": { "name": "Neel Malkhare", "wave": "15" },
-  "AW073": { "name": "Devanshi angia", "wave": "15" },
-  "AW074": { "name": "Sushant Singh", "wave": "15" },
-  "AW075": { "name": "Aditya Mali", "wave": "15" },
-  "AW076": { "name": "Akash ugale", "wave": "16" },
-  "AW077": { "name": "Rohan Malode", "wave": "16" },
-  "AW078": { "name": "Krishna rathi", "wave": "16" },
-  "AW079": { "name": "Richa Saraswat", "wave": "16" },
-  "AW080": { "name": "Ketaki Cholkar", "wave": "16" },
-  "AW081": { "name": "Shivali Godkhindi", "wave": "17" },
-  "AW082": { "name": "Abhishek Deshpande", "wave": "17" },
-  "AW083": { "name": "Rucha Kardile", "wave": "17" },
-  "AW084": { "name": "Vaishnavi Rajkumar Padamwar", "wave": "17" },
-  "AW085": { "name": "Akshay navnath khod", "wave": "17" },
-  "AW086": { "name": "Amruta", "wave": "18" },
-  "AW087": { "name": "Gayatri Girish Darode", "wave": "18" },
-  "AW088": { "name": "Adit Godbole", "wave": "18" },
-  "AW089": { "name": "Vrushali Sanjay Khutwad", "wave": "18" },
-  "AW090": { "name": "Sahil Khare", "wave": "18" },
-  "AW091": { "name": "Sarthak", "wave": "19" },
-  "AW092": { "name": "Gitesh suranje", "wave": "19" },
-  "AW093": { "name": "Varad kadam", "wave": "19" },
-  "AW094": { "name": "Vinayak Deshmukh", "wave": "19" },
-  "AW095": { "name": "Vinayak Deshmukh", "wave": "19" },
-  "AW096": { "name": "Atharva Kudale", "wave": "20" },
-  "AW097": { "name": "Inderneel Bhosale", "wave": "20" },
-  "AW098": { "name": "Akash", "wave": "20" },
-  "AW099": { "name": "Shubham Raut", "wave": "20" },
-  "AW100": { "name": "Nishant Thengal", "wave": "20" },
-  "AW101": { "name": "Shubham Maruti Temghare", "wave": "21" },
-  "AW102": { "name": "Soham Phutane", "wave": "21" },
-  "AW103": { "name": "Aryaman Todkar", "wave": "21" },
-  "AW104": { "name": "Chetan Sikchi", "wave": "21" },
-  "AW105": { "name": "Parth Deokar", "wave": "21" },
-  "AW106": { "name": "Jaideep Aher", "wave": "22" },
-  "AW107": { "name": "Shubham Nagargoje", "wave": "22" },
-  "AW108": { "name": "Capt Sagar bobade", "wave": "22" },
-  "AW109": { "name": "Capt sagar bobade", "wave": "22" },
-  "AW110": { "name": "Capt sagar", "wave": "22" },
-  "AW111": { "name": "Pranav Jadhao", "wave": "23" },
-  "AW112": { "name": "Sagar Wankhade", "wave": "23" },
-  "AW113": { "name": "Tohid Javid Maniyar", "wave": "23" },
-  "AW114": { "name": "Nayan Kolhe", "wave": "23" },
-  "AW115": { "name": "Ganesh Tayde", "wave": "23" },
-  "AW116": { "name": "Sarthak Dhobale", "wave": "24" },
-  "AW117": { "name": "Abhinav Limaye", "wave": "24" },
-  "AW118": { "name": "Saket Koppineedi", "wave": "24" },
-  "AW119": { "name": "Atharva  Karnik", "wave": "24" },
-  "AW120": { "name": "Aditya Khilare", "wave": "24" },
-  "AW121": { "name": "Aditya Khilare", "wave": "25" },
-  "AW122": { "name": "Kunal kandhare", "wave": "25" },
-  "AW123": { "name": "Jagdish Rahul Sikchi", "wave": "25" },
-  "AW124": { "name": "Arpita", "wave": "25" },
-  "AW125": { "name": "Kunal", "wave": "25" },
-  "AW126": { "name": "Aamod Kale", "wave": "26" },
-  "AW127": { "name": "Akshay Jagannath Mohite", "wave": "26" },
-  "AW128": { "name": "Varda Sanjay Dahake", "wave": "26" },
-  "AW129": { "name": "Shreeyash Raut", "wave": "26" },
-  "AW130": { "name": "Adwait joshi", "wave": "26" },
-  "AW131": { "name": "Aditya Mali", "wave": "27" },
-  "AW132": { "name": "Anisha singh", "wave": "27" },
-  "AW133": { "name": "Narendra Kedar", "wave": "27" },
-  "AW134": { "name": "Dhruv Jategaonkar", "wave": "27" },
-  "AW135": { "name": "Arham sancheti", "wave": "27" },
-  "AW136": { "name": "Moli agrawal", "wave": "28" },
-  "AW137": { "name": "Gayatri Kharadkar", "wave": "28" },
-  "AW138": { "name": "Aadi Shinde", "wave": "28" },
-  "AW139": { "name": "VAIDEHI ANAND LAVATE", "wave": "28" },
-  "AW140": { "name": "Siddharth Dengle", "wave": "28" },
-  "AW141": { "name": "Jay Umap", "wave": "29" }
+  "AW001": {
+    "name": "Vyankatesh Mahesh Joshi",
+    "wave": "",
+    "gender": ""
+  },
+  "AW002": {
+    "name": "Anjali Angadi",
+    "wave": "",
+    "gender": ""
+  },
+  "AW003": {
+    "name": "Prasad Devendra Tilak",
+    "wave": "",
+    "gender": ""
+  },
+  "AW004": {
+    "name": "Payal Sanas",
+    "wave": "",
+    "gender": ""
+  },
+  "AW005": {
+    "name": "Arya Kshirsagar",
+    "wave": "",
+    "gender": ""
+  },
+  "AW006": {
+    "name": "Aakanksha B",
+    "wave": "",
+    "gender": ""
+  },
+  "AW007": {
+    "name": "Dharaa S Jalan",
+    "wave": "",
+    "gender": ""
+  },
+  "AW008": {
+    "name": "Vidhi Dahad",
+    "wave": "",
+    "gender": ""
+  },
+  "AW009": {
+    "name": "Aryan Dharmadhikari",
+    "wave": "",
+    "gender": ""
+  },
+  "AW010": {
+    "name": "Soham Bapat",
+    "wave": "",
+    "gender": ""
+  },
+  "AW011": {
+    "name": "Sameeran Mokashi",
+    "wave": "",
+    "gender": ""
+  },
+  "AW012": {
+    "name": "Parth Venkatraman",
+    "wave": "",
+    "gender": ""
+  },
+  "AW013": {
+    "name": "Shreeshail Chitpur",
+    "wave": "",
+    "gender": ""
+  },
+  "AW014": {
+    "name": "Yashashree Patel",
+    "wave": "",
+    "gender": ""
+  },
+  "AW015": {
+    "name": "Rohit chavan",
+    "wave": "",
+    "gender": ""
+  },
+  "AW016": {
+    "name": "Amal Shukla",
+    "wave": "",
+    "gender": ""
+  },
+  "AW017": {
+    "name": "Reshma Sarsar",
+    "wave": "",
+    "gender": ""
+  },
+  "AW018": {
+    "name": "Gandharva Gavai",
+    "wave": "",
+    "gender": ""
+  },
+  "AW019": {
+    "name": "Vipul Jayantilal mali",
+    "wave": "",
+    "gender": ""
+  },
+  "AW020": {
+    "name": "Minakshi Deokar",
+    "wave": "",
+    "gender": ""
+  },
+  "AW021": {
+    "name": "Ayush Yadav",
+    "wave": "",
+    "gender": ""
+  },
+  "AW022": {
+    "name": "Srushti Bhujbal",
+    "wave": "",
+    "gender": ""
+  },
+  "AW023": {
+    "name": "Chaitanya Bidkar",
+    "wave": "",
+    "gender": ""
+  },
+  "AW024": {
+    "name": "Shriansh Vaishnava",
+    "wave": "",
+    "gender": ""
+  },
+  "AW025": {
+    "name": "Samridh Saini",
+    "wave": "",
+    "gender": ""
+  },
+  "AW026": {
+    "name": "Aditya Anand Mali",
+    "wave": "",
+    "gender": ""
+  },
+  "AW027": {
+    "name": "Dhruv chaudhary",
+    "wave": "",
+    "gender": ""
+  },
+  "AW028": {
+    "name": "AYUSH JAIN",
+    "wave": "",
+    "gender": ""
+  },
+  "AW029": {
+    "name": "Meenal Deogaonkar",
+    "wave": "",
+    "gender": ""
+  },
+  "AW030": {
+    "name": "Shreyas",
+    "wave": "",
+    "gender": ""
+  },
+  "AW031": {
+    "name": "Arjun Vishwakarma",
+    "wave": "",
+    "gender": ""
+  },
+  "AW032": {
+    "name": "Atharva Sunder",
+    "wave": "",
+    "gender": ""
+  },
+  "AW033": {
+    "name": "Anaya ghate",
+    "wave": "",
+    "gender": ""
+  },
+  "AW034": {
+    "name": "Vishal Shivmurat Chaurasiya",
+    "wave": "",
+    "gender": ""
+  },
+  "AW035": {
+    "name": "Siddhi Yogesh Bhosekar",
+    "wave": "",
+    "gender": ""
+  },
+  "AW036": {
+    "name": "Kunal Kshirsagar",
+    "wave": "",
+    "gender": ""
+  },
+  "AW037": {
+    "name": "Ameya Phatak",
+    "wave": "",
+    "gender": ""
+  },
+  "AW038": {
+    "name": "Bhargavi Salunkhe",
+    "wave": "",
+    "gender": ""
+  },
+  "AW039": {
+    "name": "Bhuvanesh Kamble",
+    "wave": "",
+    "gender": ""
+  },
+  "AW040": {
+    "name": "Atharv Balkawade",
+    "wave": "",
+    "gender": ""
+  },
+  "AW041": {
+    "name": "Rutik Sanjay Shirke",
+    "wave": "",
+    "gender": ""
+  },
+  "AW042": {
+    "name": "Adhya Dubey",
+    "wave": "",
+    "gender": ""
+  },
+  "AW043": {
+    "name": "Jay Shah",
+    "wave": "",
+    "gender": ""
+  },
+  "AW044": {
+    "name": "Amit Pile",
+    "wave": "",
+    "gender": ""
+  },
+  "AW045": {
+    "name": "Swaraj Chavan",
+    "wave": "",
+    "gender": ""
+  },
+  "AW046": {
+    "name": "Nikita Kakade",
+    "wave": "",
+    "gender": ""
+  },
+  "AW047": {
+    "name": "Akash Kelkar",
+    "wave": "",
+    "gender": ""
+  },
+  "AW048": {
+    "name": "Snehal Khemnar",
+    "wave": "",
+    "gender": ""
+  },
+  "AW049": {
+    "name": "Atharva Kakade",
+    "wave": "",
+    "gender": ""
+  },
+  "AW050": {
+    "name": "Parth Pramod Ligade",
+    "wave": "",
+    "gender": ""
+  },
+  "AW051": {
+    "name": "Pushkar zimbre",
+    "wave": "",
+    "gender": ""
+  },
+  "AW052": {
+    "name": "Deepak Saraswat",
+    "wave": "",
+    "gender": ""
+  },
+  "AW053": {
+    "name": "Aadya Kadam",
+    "wave": "",
+    "gender": ""
+  },
+  "AW054": {
+    "name": "Prajwal Dnyaneshwar Waghole",
+    "wave": "",
+    "gender": ""
+  },
+  "AW055": {
+    "name": "Mitali Bhindwale",
+    "wave": "",
+    "gender": ""
+  },
+  "AW056": {
+    "name": "Guru",
+    "wave": "",
+    "gender": ""
+  },
+  "AW057": {
+    "name": "Saurabh Badole",
+    "wave": "",
+    "gender": ""
+  },
+  "AW058": {
+    "name": "Sangram Rajput",
+    "wave": "",
+    "gender": ""
+  },
+  "AW059": {
+    "name": "Akshay Shinde",
+    "wave": "",
+    "gender": ""
+  },
+  "AW060": {
+    "name": "Tanvi Bhargaw",
+    "wave": "",
+    "gender": ""
+  },
+  "AW061": {
+    "name": "Kshitija Purohit",
+    "wave": "",
+    "gender": ""
+  },
+  "AW062": {
+    "name": "Rutvi Paithankar",
+    "wave": "",
+    "gender": ""
+  },
+  "AW063": {
+    "name": "Varadraj Boramanikar",
+    "wave": "",
+    "gender": ""
+  },
+  "AW064": {
+    "name": "Vivaan",
+    "wave": "",
+    "gender": ""
+  },
+  "AW065": {
+    "name": "Chaitanya Ashtekar",
+    "wave": "",
+    "gender": ""
+  },
+  "AW066": {
+    "name": "Saundarya Tambe",
+    "wave": "",
+    "gender": ""
+  },
+  "AW067": {
+    "name": "LINO SHINU",
+    "wave": "",
+    "gender": ""
+  },
+  "AW068": {
+    "name": "Shriya velhal",
+    "wave": "",
+    "gender": ""
+  },
+  "AW069": {
+    "name": "Sakshi Pednekar",
+    "wave": "",
+    "gender": ""
+  },
+  "AW070": {
+    "name": "Piyush Kolhatkar",
+    "wave": "",
+    "gender": ""
+  },
+  "AW071": {
+    "name": "Malhar Tamhankar",
+    "wave": "",
+    "gender": ""
+  },
+  "AW072": {
+    "name": "Neel Malkhare",
+    "wave": "",
+    "gender": ""
+  },
+  "AW073": {
+    "name": "Devanshi angia",
+    "wave": "",
+    "gender": ""
+  },
+  "AW074": {
+    "name": "Sushant Singh",
+    "wave": "",
+    "gender": ""
+  },
+  "AW075": {
+    "name": "Aditya Mali",
+    "wave": "",
+    "gender": ""
+  },
+  "AW076": {
+    "name": "Akash ugale",
+    "wave": "",
+    "gender": ""
+  },
+  "AW077": {
+    "name": "Rohan Malode",
+    "wave": "",
+    "gender": ""
+  },
+  "AW078": {
+    "name": "Krishna rathi",
+    "wave": "",
+    "gender": ""
+  },
+  "AW079": {
+    "name": "Richa Saraswat",
+    "wave": "",
+    "gender": ""
+  },
+  "AW080": {
+    "name": "Ketaki Cholkar",
+    "wave": "",
+    "gender": ""
+  },
+  "AW081": {
+    "name": "Shivali Godkhindi",
+    "wave": "",
+    "gender": ""
+  },
+  "AW082": {
+    "name": "Abhishek Deshpande",
+    "wave": "",
+    "gender": ""
+  },
+  "AW083": {
+    "name": "Rucha Kardile",
+    "wave": "",
+    "gender": ""
+  },
+  "AW084": {
+    "name": "Vaishnavi Rajkumar Padamwar",
+    "wave": "",
+    "gender": ""
+  },
+  "AW085": {
+    "name": "Akshay navnath khod",
+    "wave": "",
+    "gender": ""
+  },
+  "AW086": {
+    "name": "Amruta",
+    "wave": "",
+    "gender": ""
+  },
+  "AW087": {
+    "name": "Gayatri Girish Darode",
+    "wave": "",
+    "gender": ""
+  },
+  "AW088": {
+    "name": "Adit Godbole",
+    "wave": "",
+    "gender": ""
+  },
+  "AW089": {
+    "name": "Vrushali Sanjay Khutwad",
+    "wave": "",
+    "gender": ""
+  },
+  "AW090": {
+    "name": "Sahil Khare",
+    "wave": "",
+    "gender": ""
+  },
+  "AW091": {
+    "name": "Sarthak",
+    "wave": "",
+    "gender": ""
+  },
+  "AW092": {
+    "name": "Gitesh suranje",
+    "wave": "",
+    "gender": ""
+  },
+  "AW093": {
+    "name": "Varad kadam",
+    "wave": "",
+    "gender": ""
+  },
+  "AW094": {
+    "name": "Vinayak Deshmukh",
+    "wave": "",
+    "gender": ""
+  },
+  "AW095": {
+    "name": "Vinayak Deshmukh",
+    "wave": "",
+    "gender": ""
+  },
+  "AW096": {
+    "name": "Atharva Kudale",
+    "wave": "",
+    "gender": ""
+  },
+  "AW097": {
+    "name": "Inderneel Bhosale",
+    "wave": "",
+    "gender": ""
+  },
+  "AW098": {
+    "name": "Akash",
+    "wave": "",
+    "gender": ""
+  },
+  "AW099": {
+    "name": "Shubham Raut",
+    "wave": "",
+    "gender": ""
+  },
+  "AW100": {
+    "name": "Nishant Thengal",
+    "wave": "",
+    "gender": ""
+  },
+  "AW101": {
+    "name": "Shubham Maruti Temghare",
+    "wave": "",
+    "gender": ""
+  },
+  "AW102": {
+    "name": "Soham Phutane",
+    "wave": "",
+    "gender": ""
+  },
+  "AW103": {
+    "name": "Aryaman Todkar",
+    "wave": "",
+    "gender": ""
+  },
+  "AW104": {
+    "name": "Chetan Sikchi",
+    "wave": "",
+    "gender": ""
+  },
+  "AW105": {
+    "name": "Parth Deokar",
+    "wave": "",
+    "gender": ""
+  },
+  "AW106": {
+    "name": "Jaideep Aher",
+    "wave": "",
+    "gender": ""
+  },
+  "AW107": {
+    "name": "Shubham Nagargoje",
+    "wave": "",
+    "gender": ""
+  },
+  "AW108": {
+    "name": "Capt Sagar bobade",
+    "wave": "",
+    "gender": ""
+  },
+  "AW109": {
+    "name": "Capt sagar bobade",
+    "wave": "",
+    "gender": ""
+  },
+  "AW110": {
+    "name": "Capt sagar",
+    "wave": "",
+    "gender": ""
+  },
+  "AW111": {
+    "name": "Pranav Jadhao",
+    "wave": "",
+    "gender": ""
+  },
+  "AW112": {
+    "name": "Sagar Wankhade",
+    "wave": "",
+    "gender": ""
+  },
+  "AW113": {
+    "name": "Tohid Javid Maniyar",
+    "wave": "",
+    "gender": ""
+  },
+  "AW114": {
+    "name": "Nayan Kolhe",
+    "wave": "",
+    "gender": ""
+  },
+  "AW115": {
+    "name": "Ganesh Tayde",
+    "wave": "",
+    "gender": ""
+  },
+  "AW116": {
+    "name": "Sarthak Dhobale",
+    "wave": "",
+    "gender": ""
+  },
+  "AW117": {
+    "name": "Abhinav Limaye",
+    "wave": "",
+    "gender": ""
+  },
+  "AW118": {
+    "name": "Saket Koppineedi",
+    "wave": "",
+    "gender": ""
+  },
+  "AW119": {
+    "name": "Atharva  Karnik",
+    "wave": "",
+    "gender": ""
+  },
+  "AW120": {
+    "name": "Aditya Khilare",
+    "wave": "",
+    "gender": ""
+  },
+  "AW121": {
+    "name": "Aditya Khilare",
+    "wave": "",
+    "gender": ""
+  },
+  "AW122": {
+    "name": "Kunal kandhare",
+    "wave": "",
+    "gender": ""
+  },
+  "AW123": {
+    "name": "Jagdish Rahul Sikchi",
+    "wave": "",
+    "gender": ""
+  },
+  "AW124": {
+    "name": "Arpita",
+    "wave": "",
+    "gender": ""
+  },
+  "AW125": {
+    "name": "Kunal",
+    "wave": "",
+    "gender": ""
+  },
+  "AW126": {
+    "name": "Aamod Kale",
+    "wave": "",
+    "gender": ""
+  },
+  "AW127": {
+    "name": "Akshay Jagannath Mohite",
+    "wave": "",
+    "gender": ""
+  },
+  "AW128": {
+    "name": "Varda Sanjay Dahake",
+    "wave": "",
+    "gender": ""
+  },
+  "AW129": {
+    "name": "Shreeyash Raut",
+    "wave": "",
+    "gender": ""
+  },
+  "AW130": {
+    "name": "Adwait joshi",
+    "wave": "",
+    "gender": ""
+  },
+  "AW131": {
+    "name": "Aditya Mali",
+    "wave": "",
+    "gender": ""
+  },
+  "AW132": {
+    "name": "Anisha singh",
+    "wave": "",
+    "gender": ""
+  },
+  "AW133": {
+    "name": "Narendra Kedar",
+    "wave": "",
+    "gender": ""
+  },
+  "AW134": {
+    "name": "Dhruv Jategaonkar",
+    "wave": "",
+    "gender": ""
+  },
+  "AW135": {
+    "name": "Arham sancheti",
+    "wave": "",
+    "gender": ""
+  },
+  "AW136": {
+    "name": "Moli agrawal",
+    "wave": "",
+    "gender": ""
+  },
+  "AW137": {
+    "name": "Gayatri Kharadkar",
+    "wave": "",
+    "gender": ""
+  },
+  "AW138": {
+    "name": "Aadi Shinde",
+    "wave": "",
+    "gender": ""
+  },
+  "AW139": {
+    "name": "VAIDEHI ANAND LAVATE",
+    "wave": "",
+    "gender": ""
+  },
+  "AW140": {
+    "name": "Siddharth Dengle",
+    "wave": "",
+    "gender": ""
+  },
+  "AW141": {
+    "name": "Jay Umap",
+    "wave": "",
+    "gender": ""
+  },
+  "AW142": {
+    "name": "Krishna",
+    "wave": "",
+    "gender": ""
+  },
+  "AW143": {
+    "name": "Krishna",
+    "wave": "",
+    "gender": ""
+  },
+  "AW144": {
+    "name": "Omkar Shashank Belsare",
+    "wave": "",
+    "gender": ""
+  },
+  "AW145": {
+    "name": "Abhishek Kulkarni",
+    "wave": "",
+    "gender": ""
+  },
+  "AW146": {
+    "name": "Tejas Kulkarni",
+    "wave": "",
+    "gender": ""
+  },
+  "AW147": {
+    "name": "Hrishikesh Ansingkar",
+    "wave": "",
+    "gender": ""
+  },
+  "AW148": {
+    "name": "Madhura Sandbhor",
+    "wave": "",
+    "gender": ""
+  },
+  "AW149": {
+    "name": "Sakshi",
+    "wave": "",
+    "gender": ""
+  },
+  "AW150": {
+    "name": "Ketan Joshi",
+    "wave": "",
+    "gender": ""
+  },
+  "AW151": {
+    "name": "Sanskar sopan rathod",
+    "wave": "",
+    "gender": ""
+  },
+  "AW152": {
+    "name": "Mayuri Kirloskar",
+    "wave": "",
+    "gender": ""
+  },
+  "AW153": {
+    "name": "Aamod Kale",
+    "wave": "",
+    "gender": ""
+  },
+  "AW154": {
+    "name": "Simran chetri",
+    "wave": "",
+    "gender": ""
+  },
+  "AW155": {
+    "name": "Simran chetri",
+    "wave": "",
+    "gender": ""
+  },
+  "AW156": {
+    "name": "Anveet Mahesh Thombare",
+    "wave": "",
+    "gender": ""
+  },
+  "AW157": {
+    "name": "Suyash Chaudhari",
+    "wave": "",
+    "gender": ""
+  },
+  "AW158": {
+    "name": "Shipra kumari",
+    "wave": "",
+    "gender": ""
+  },
+  "AW159": {
+    "name": "Omkar Dahiwal",
+    "wave": "",
+    "gender": ""
+  },
+  "AW160": {
+    "name": "Mayuresh Natu",
+    "wave": "",
+    "gender": ""
+  },
+  "AW161": {
+    "name": "Heramb Salunkhe",
+    "wave": "",
+    "gender": ""
+  },
+  "AW162": {
+    "name": "Hitesh Sonawane",
+    "wave": "",
+    "gender": ""
+  },
+  "AW163": {
+    "name": "Shaunak Gokhale",
+    "wave": "",
+    "gender": ""
+  },
+  "AW164": {
+    "name": "Rutvi Paithankar",
+    "wave": "",
+    "gender": ""
+  },
+  "AW165": {
+    "name": "Harshwardhan Pasalkar",
+    "wave": "",
+    "gender": ""
+  },
+  "AW166": {
+    "name": "Sanchit Appasaheb Shinde",
+    "wave": "",
+    "gender": ""
+  },
+  "AW167": {
+    "name": "Saheel Gangote",
+    "wave": "",
+    "gender": ""
+  },
+  "AW168": {
+    "name": "Kiran Shridhar Gunjal",
+    "wave": "",
+    "gender": ""
+  },
+  "AW169": {
+    "name": "prathamesh",
+    "wave": "",
+    "gender": ""
+  },
+  "AW170": {
+    "name": "Aashish Karwa",
+    "wave": "",
+    "gender": ""
+  },
+  "AW171": {
+    "name": "Varad Khisti",
+    "wave": "",
+    "gender": ""
+  },
+  "AW172": {
+    "name": "Sahil Joshi",
+    "wave": "",
+    "gender": ""
+  },
+  "AW173": {
+    "name": "Shrohit kalambkar",
+    "wave": "",
+    "gender": ""
+  },
+  "AW174": {
+    "name": "Sachetas Sameer gandhi",
+    "wave": "",
+    "gender": ""
+  },
+  "AW175": {
+    "name": "Atharv Yadav",
+    "wave": "",
+    "gender": ""
+  },
+  "AW176": {
+    "name": "Rushikesh Chougule",
+    "wave": "",
+    "gender": ""
+  },
+  "AW177": {
+    "name": "Diksha Pandit",
+    "wave": "",
+    "gender": ""
+  },
+  "AW178": {
+    "name": "Mrunal Mungi",
+    "wave": "",
+    "gender": ""
+  },
+  "AW179": {
+    "name": "Sohail khan",
+    "wave": "",
+    "gender": ""
+  },
+  "AW180": {
+    "name": "Pious gandhi",
+    "wave": "",
+    "gender": ""
+  },
+  "AW181": {
+    "name": "Yuvraj Vilas Shete",
+    "wave": "",
+    "gender": ""
+  },
+  "AW182": {
+    "name": "Nikhil",
+    "wave": "",
+    "gender": ""
+  },
+  "AW183": {
+    "name": "Neeraj Lembhe",
+    "wave": "",
+    "gender": ""
+  },
+  "AW184": {
+    "name": "Srijan Gauraha",
+    "wave": "",
+    "gender": ""
+  },
+  "AW185": {
+    "name": "Sarvesh Parkhe",
+    "wave": "",
+    "gender": ""
+  },
+  "AW186": {
+    "name": "Rohit Panshikar",
+    "wave": "",
+    "gender": ""
+  },
+  "AW187": {
+    "name": "Varad Patwardhan",
+    "wave": "",
+    "gender": ""
+  },
+  "AW188": {
+    "name": "Prasad",
+    "wave": "",
+    "gender": ""
+  },
+  "AW189": {
+    "name": "Jagdish Bokil",
+    "wave": "",
+    "gender": ""
+  },
+  "AW190": {
+    "name": "Vipul mali",
+    "wave": "",
+    "gender": ""
+  },
+  "AW191": {
+    "name": "Fatehraj Jetharam Suthar",
+    "wave": "",
+    "gender": ""
+  },
+  "AW192": {
+    "name": "Andrea Dsouza",
+    "wave": "",
+    "gender": ""
+  },
+  "AW193": {
+    "name": "Sneha Premanand Kamble",
+    "wave": "",
+    "gender": ""
+  },
+  "AW194": {
+    "name": "Aaryan Dusane",
+    "wave": "",
+    "gender": ""
+  },
+  "AW195": {
+    "name": "Rohan Ram Sarode",
+    "wave": "",
+    "gender": ""
+  },
+  "AW196": {
+    "name": "Om Mahajan",
+    "wave": "",
+    "gender": ""
+  },
+  "AW197": {
+    "name": "Hardik Bora",
+    "wave": "",
+    "gender": ""
+  },
+  "AW198": {
+    "name": "Karan Karnad",
+    "wave": "",
+    "gender": ""
+  },
+  "AW199": {
+    "name": "Shriyash Bhamare",
+    "wave": "",
+    "gender": ""
+  }
 }

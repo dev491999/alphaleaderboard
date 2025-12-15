@@ -263,6 +263,18 @@
       .leaderboard-table th:nth-child(2),
       .leaderboard-table td:nth-child(2) { min-width: 160px; }
     }
+
+    /* Tabs + podium */
+    .tabs { display: flex; gap: 8px; margin-bottom: 12px; }
+    .tab { background: transparent; border: 1px solid var(--color-border); padding: 8px 12px; border-radius: 8px; cursor: pointer; font-weight: 600; }
+    .tab.active { background: var(--color-primary); color: #fff; border-color: rgba(0,0,0,0.04); }
+
+    .podium { display: flex; gap: 12px; align-items: end; justify-content: center; margin-bottom: 14px; }
+    .podium .card { background: #fff; border-radius: 10px; padding: 10px 14px; text-align: center; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+    .podium .card .pos { font-size: 12px; color: #666; }
+    .podium .card .name { font-weight: 700; margin-top: 6px; }
+    .podium .card .time { font-family: "SF Mono", monospace; margin-top: 6px; color: #333; }
+    .podium .card.first { transform: translateY(-8px); background: linear-gradient(135deg,#fff7e3,#fff9ef); }
   </style>
 
   <!-- Firebase SDKs -->
@@ -293,6 +305,12 @@
       </div>
 
       <div class="leaderboard-wrapper">
+        <div class="leaderboard-controls">
+          <div class="tabs" role="tablist">
+            <button class="tab active" data-gender="M" role="tab">Men</button>
+            <button class="tab" data-gender="F" role="tab">Women</button>
+          </div>
+        </div>
         <div id="public-leaderboard">
           <div class="empty-state">Waiting for first finisher…</div>
         </div>
@@ -371,20 +389,13 @@
         now.toLocaleTimeString(undefined, { hour: "2-digit", minute: "2-digit", second: "2-digit" });
     }
 
-    // 5. Render leaderboard
+    // 5. Legacy render wrapper kept for compatibility
     function renderPublicLeaderboard() {
-      const container = document.getElementById("public-leaderboard");
+      renderLeaderboardFor(_activeGender);
+    }
 
-      let stoppedTimes = globalStoppedTimes || [];
-      if (!stoppedTimes.length) {
-        container.innerHTML = '<div class="empty-state">No finishers recorded yet.</div>';
-        updateMeta(0);
-        return;
-      }
 
-      // sort by time ascending
-      stoppedTimes = [...stoppedTimes].sort((a, b) => a.timeMs - b.timeMs);
-
+    function buildLeaderboardTable(stoppedTimes) {
       let html = `
         <table class="leaderboard-table">
           <thead>
@@ -392,7 +403,6 @@
               <th>Rank</th>
               <th>Name</th>
               <th>BIB</th>
-              <th>Wave</th>
               <th>Time</th>
             </tr>
           </thead>
@@ -400,10 +410,9 @@
       `;
 
       stoppedTimes.forEach((item, index) => {
-        const bib = item.bib || "NA";
+        const bib = item.bib || 'NA';
         const p = bib && PARTICIPANTS[bib] ? PARTICIPANTS[bib] : null;
-        const displayName = p ? p.name : "Unknown";
-        const displayWave = p ? p.wave : (item.waveNumber || "");
+        const displayName = p ? p.name : 'Unknown';
         const timeFormatted = formatTime(item.timeMs);
 
         html += `
@@ -411,36 +420,88 @@
             <td class="rank-cell">${index + 1}</td>
             <td class="name-cell">${displayName}</td>
             <td class="bib-cell">${bib}</td>
-            <td class="wave-cell">${displayWave}</td>
             <td class="time-cell">${timeFormatted}</td>
           </tr>
         `;
       });
 
-      html += "</tbody></table>";
-      container.innerHTML = `<div class="table-wrap">${html}</div>`;
-      updateMeta(stoppedTimes.length);
+      html += '</tbody></table>';
+      return `<div class="table-wrap">${html}</div>`;
     }
++
++    function renderLeaderboardFor(genderKey) {
++      const container = document.getElementById('public-leaderboard');
++      let stoppedTimes = globalStoppedTimes || [];
++      if (!stoppedTimes.length) {
++        container.innerHTML = '<div class="empty-state">No finishers recorded yet.</div>';
++        updateMeta(0);
++        return;
++      }
++
++      stoppedTimes = [...stoppedTimes].sort((a,b) => a.timeMs - b.timeMs);
++
++      // filter by gender using PARTICIPANTS mapping (expect 'M' or 'F')
++      function genderOf(item) {
++        const bib = item.bib; const p = bib && PARTICIPANTS[bib] ? PARTICIPANTS[bib] : null;
++        if (!p || !p.gender) return '';
++        const g = String(p.gender || '').trim().toUpperCase();
++        if (g.startsWith('M')) return 'M';
++        if (g.startsWith('F')) return 'F';
++        return '';
++      }
++
++      const filtered = stoppedTimes.filter(s => genderOf(s) === genderKey);
++      const top3 = filtered.slice(0,3);
++      const rest = filtered.slice(3);
++
++      const podiumHtml = top3.length
++        ? `<div class="podium">${top3.map((item, i)=>{
++            const bib = item.bib || 'NA'; const p = PARTICIPANTS[bib] || {}; const name = p.name || 'Unknown'; const time = formatTime(item.timeMs);
++            const cls = i===0? 'card first' : 'card';
++            return `<div class="${cls}"><div class="pos">#${i+1}</div><div class="name">${name}</div><div class="time">${time}</div><div class="meta">${bib}</div></div>`;
++          }).join('')}</div>`
++        : '<div class="empty-state">No finishers in this category yet.</div>';
++
++      const tableHtml = buildLeaderboardTable(filtered);
++      container.innerHTML = podiumHtml + tableHtml;
++      updateMeta(filtered.length);
++    }
+*** End Patch
 
     // 6. Sync from Firebase leaderboard node
+    let _activeGender = 'M';
+    function setActiveGender(g) {
+      _activeGender = g;
+      document.querySelectorAll('.tab').forEach(b => b.classList.toggle('active', b.getAttribute('data-gender') === g));
+      renderLeaderboardFor(g);
+    }
+
+    function setupTabs() {
+      document.querySelectorAll('.tab').forEach(btn => {
+        btn.addEventListener('click', () => setActiveGender(btn.getAttribute('data-gender')));
+      });
+    }
+
     function startSyncListeners() {
       if (!db) return;
       db.ref().on("value", (snapshot) => {
         const data = snapshot.val();
         if (!data) {
           globalStoppedTimes = [];
-          renderPublicLeaderboard();
+          renderLeaderboardFor(_activeGender);
           return;
         }
         globalStoppedTimes = data.leaderboard
           ? Object.values(data.leaderboard).filter(Boolean)
           : [];
-        renderPublicLeaderboard();
+        renderLeaderboardFor(_activeGender);
       });
     }
 
     document.addEventListener("DOMContentLoaded", () => {
       loadParticipants().then(() => {
+        setupTabs();
+        setActiveGender('M');
         startSyncListeners();
       });
     });
