@@ -375,20 +375,22 @@
       { name: "Pink",   hex: "#ef4899", abbr: "PI" }
     ];
 
-    // 3. Participant mapping (BIB -> name, wave) – demo subset from alpha-arena-Participants.csv
-    // IMPORTANT: extend this with all AW001..AWxxx before race day. [file:14]
-    const PARTICIPANTS = {
-      "AW001": { name: "Vyankatesh Mahesh Joshi", wave: "10" },
-      "AW002": { name: "Anjali Angadi", wave: "10" },
-      "AW003": { name: "Prasad Devendra Tilak", wave: "10" },
-      "AW004": { name: "Payal Sanas", wave: "10" },
-      "AW005": { name: "Arya Kshirsagar", wave: "10" },
-      "AW006": { name: "Aakanksha B", wave: "20" },
-      "AW007": { name: "Dharaa S Jalan", wave: "20" },
-      "AW008": { name: "Vidhi Dahad", wave: "20" },
-      "AW009": { name: "Aryan Dharmadhikari", wave: "20" }
-      // ...continue mapping all participants like above using your CSV
-    };
+    // 3. Participant mapping (BIB -> name, wave)
+    // This file now loads `participants.json` (generated from your CSV) at runtime.
+    let PARTICIPANTS = {};
+
+    async function loadParticipants() {
+      try {
+        const resp = await fetch('participants.json');
+        if (resp.ok) {
+          PARTICIPANTS = await resp.json();
+        } else {
+          console.warn('participants.json not found (status ' + resp.status + ')');
+        }
+      } catch (e) {
+        console.warn('Failed to load participants.json', e);
+      }
+    }
 
     // 4. Utility functions
     function formatTime(ms) {
@@ -496,8 +498,10 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-      renderLegend();
-      startSyncListeners();
+      loadParticipants().then(() => {
+        renderLegend();
+        startSyncListeners();
+      });
     });
   </script>
 </body>
