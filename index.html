@@ -7,498 +7,349 @@
 
   <style>
     :root {
-      --color-primary: #ff1744;
-      --color-secondary: #f5f5f5;
-      --color-text: #1f2121;
-      --color-border: #e0e0e0;
-      --color-dark: #000000;
-      --spacing: 16px;
-      --radius: 10px;
+      --primary: #ff1744;
+      --text: #1f2121;
+      --border: #e0e0e0;
+      --bg-soft: #fafafa;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #ffffff 0, #f3f3f3 45%, #e5e5e5 100%);
-      color: var(--color-text);
+      background: radial-gradient(circle at top, #ffffff, #ececec);
+      color: var(--text);
       min-height: 100vh;
       display: flex;
-      align-items: stretch;
       justify-content: center;
       padding: 20px;
     }
 
     .container {
-      max-width: 1100px;
       width: 100%;
-      margin: auto;
-      background: rgba(255, 255, 255, 0.98);
+      max-width: 1100px;
+      background: #fff;
       border-radius: 16px;
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+      box-shadow: 0 18px 45px rgba(0,0,0,.18);
       overflow: hidden;
-      border: 1px solid rgba(0, 0, 0, 0.05);
       display: flex;
       flex-direction: column;
     }
 
-    .header {
-      padding: 22px 26px 14px 26px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    header {
+      padding: 22px 26px 14px;
+      border-bottom: 1px solid rgba(0,0,0,.06);
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      align-items: center;
     }
 
-    .header-left {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .header h1 {
+    header h1 {
       font-size: 22px;
-      letter-spacing: 0.08em;
+      letter-spacing: .06em;
       text-transform: uppercase;
-      color: var(--color-dark);
     }
 
-    .header p {
+    header p {
       font-size: 13px;
       color: #666;
     }
 
     .badge-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       padding: 4px 10px;
       border-radius: 999px;
       font-size: 11px;
       font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(255, 23, 68, 0.08);
-      color: var(--color-primary);
-      border: 1px solid rgba(255, 23, 68, 0.45);
+      color: var(--primary);
+      border: 1px solid rgba(255,23,68,.45);
+      background: rgba(255,23,68,.08);
     }
 
     .dot {
       width: 7px;
       height: 7px;
+      background: var(--primary);
       border-radius: 50%;
-      background: var(--color-primary);
-      box-shadow: 0 0 0 6px rgba(255, 23, 68, 0.3);
+      box-shadow: 0 0 0 5px rgba(255,23,68,.3);
     }
 
-    .content {
-      padding: 18px 22px 22px 22px;
-    }
+    main { padding: 18px 22px 22px; }
 
     .meta-bar {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      margin-bottom: 14px;
       font-size: 12px;
       color: #777;
+      margin-bottom: 14px;
     }
 
-    .meta-left span + span {
-      margin-left: 12px;
-      position: relative;
+    .tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 14px;
     }
 
-    .meta-left span + span::before {
-      content: "•";
-      position: absolute;
-      left: -9px;
-      color: #bbb;
-    }
-
-
-
-    .leaderboard-wrapper {
-      background: #fafafa;
-      border-radius: 12px;
-      padding: 14px;
-      border: 1px solid rgba(0, 0, 0, 0.04);
-    }
-
-    .leaderboard-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 14px;
-      overflow: hidden;
-      border-radius: 10px;
-    }
-
-    /* responsive table wrapper for small screens */
-    .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-
-    .leaderboard-table { min-width: 640px; /* allow horizontal scroll on small screens */ }
-
-
-
-    .leaderboard-table thead {
-      background: linear-gradient(135deg, #ff1744, #000000);
-      color: #ffffff;
-    }
-
-    .leaderboard-table th,
-    .leaderboard-table td {
-      padding: 10px 12px;
-      text-align: left;
-    }
-
-    .leaderboard-table th {
-      font-weight: 600;
+    .tab {
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #fff;
       font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-      white-space: nowrap;
+      font-weight: 600;
+      cursor: pointer;
     }
 
-    .leaderboard-table tbody tr:nth-child(odd) {
-      background: #ffffff;
+    .tab.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
     }
 
-    .leaderboard-table tbody tr:nth-child(even) {
-      background: #f5f5f5;
+    .podium-title {
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      margin: 12px 0;
     }
 
-    .leaderboard-table tbody tr:hover {
-      background: rgba(255, 23, 68, 0.06);
-      transition: background 140ms ease-out;
+    .podium {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 12px;
+      margin-bottom: 20px;
     }
 
-    .leaderboard-table tbody tr:first-child td {
-      background: #fff7e3;
-      font-weight: 700;
-      border-bottom: 1px solid rgba(255, 184, 0, 0.4);
+    .podium-card {
+      width: 140px;
+      background: #fff;
+      border-radius: 14px;
+      padding: 14px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,.12);
     }
 
-    .rank-cell {
-      font-weight: 700;
-      font-variant-numeric: tabular-nums;
-      width: 1%;
-      white-space: nowrap;
+    .podium-card.first {
+      transform: translateY(-12px);
+      border: 2px solid gold;
     }
 
-    .name-cell {
-      font-weight: 500;
-    }
+    .podium-card.second { border: 2px solid silver; }
+    .podium-card.third  { border: 2px solid #cd7f32; }
 
-    .bib-cell {
-      font-family: "SF Mono", "Menlo", monospace;
+    .podium-rank { font-size: 12px; opacity: .6; font-weight: 700; }
+    .podium-name { margin-top: 6px; font-weight: 600; }
+    .podium-time {
+      margin-top: 4px;
+      font-family: monospace;
       font-size: 13px;
     }
 
-    
-
-    .time-cell {
-      font-family: "SF Mono", "Menlo", monospace;
-      font-weight: 600;
-      font-size: 14px;
-      letter-spacing: 0.03em;
+    .leaderboard-wrapper {
+      background: var(--bg-soft);
+      border-radius: 12px;
+      padding: 14px;
+      border: 1px solid rgba(0,0,0,.04);
     }
 
-    .empty-state {
-      padding: 26px 10px;
-      text-align: center;
+    .table-wrap { overflow-x: auto; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
       font-size: 14px;
+      min-width: 520px;
+    }
+
+    thead {
+      background: linear-gradient(135deg, #ff1744, #000);
+      color: #fff;
+    }
+
+    th, td { padding: 10px 12px; text-align: left; }
+
+    tbody tr:nth-child(even) { background: #f5f5f5; }
+
+    .rank { font-weight: 700; }
+    .bib, .time { font-family: monospace; }
+    .time { font-weight: 700; }
+
+    .empty {
+      text-align: center;
+      padding: 30px;
       color: #777;
     }
 
-    .footer-bar {
-      padding: 10px 18px 14px 18px;
-      border-top: 1px solid rgba(0, 0, 0, 0.06);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    footer {
+      padding: 10px 18px 14px;
+      border-top: 1px solid rgba(0,0,0,.06);
       font-size: 11px;
       color: #888;
+      display: flex;
+      justify-content: space-between;
     }
-
-    @media (max-width: 768px) {
-      .header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .meta-bar {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
-      }
-      /* keep Time visible on narrow screens; only hide BIB (3rd column) */
-      .table-wrap { overflow-x: auto; }
-      /* hide BIB on small screens to reduce horizontal width */
-      .leaderboard-table th:nth-child(3),
-      .leaderboard-table td:nth-child(3) {
-        display: none;
-      }
-    }
-
-    @media (max-width: 420px) {
-      .header h1 { font-size: 18px; }
-      .leaderboard-table { font-size: 13px; }
-      .leaderboard-table { min-width: 520px; }
-    }
-
-    @media (max-width: 420px) {
-      .container { padding: 12px; }
-      .header { padding: 12px 12px 8px 12px; }
-      .header-right { margin-top: 6px; }
-      /* further trim columns: keep Rank, Name, Time only */
-      .leaderboard-table th:nth-child(2),
-      .leaderboard-table td:nth-child(2) { min-width: 160px; }
-    }
-
-    /* Tabs + podium */
-    .tabs { display: flex; gap: 8px; margin-bottom: 12px; }
-    .tab { background: transparent; border: 1px solid var(--color-border); padding: 8px 12px; border-radius: 8px; cursor: pointer; font-weight: 600; }
-    .tab.active { background: var(--color-primary); color: #fff; border-color: rgba(0,0,0,0.04); }
-
-    .podium { display: flex; gap: 12px; align-items: end; justify-content: center; margin-bottom: 14px; }
-    .podium .card { background: #fff; border-radius: 10px; padding: 10px 14px; text-align: center; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
-    .podium .card .pos { font-size: 12px; color: #666; }
-    .podium .card .name { font-weight: 700; margin-top: 6px; }
-    .podium .card .time { font-family: "SF Mono", monospace; margin-top: 6px; color: #333; }
-    .podium .card.first { transform: translateY(-8px); background: linear-gradient(135deg,#fff7e3,#fff9ef); }
   </style>
 
-  <!-- Firebase SDKs -->
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
 </head>
+
 <body>
-  <div class="container">
-    <header class="header">
-      <div class="header-left">
-        <h1>Alpha Run Club</h1>
-        <p>Alpha Arena • Live Results Leaderboard</p>
+<div class="container">
+
+  <header>
+    <div>
+      <h1>Alpha Run Club</h1>
+      <p>Alpha Arena • Live Results Leaderboard</p>
+    </div>
+    <span class="badge-live"><span class="dot"></span>Live</span>
+  </header>
+
+  <main>
+    <div class="meta-bar">
+      <span id="meta-finishers">Finishers: 0</span>
+      <span id="meta-updated">Last update: —</span>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" data-view="M">Men</button>
+      <button class="tab" data-view="F">Women</button>
+    </div>
+
+    <h2 class="podium-title">Top 3 – Men</h2>
+    <div id="podium" class="podium"></div>
+
+    <div class="leaderboard-wrapper">
+      <div id="leaderboard" class="table-wrap">
+        <div class="empty">Waiting for first finisher…</div>
       </div>
-      <div class="header-right">
-        <span class="badge-live">
-          <span class="dot"></span>
-          Live synced
-        </span>
-      </div>
-    </header>
+    </div>
+  </main>
 
-    <main class="content">
-      <div class="meta-bar">
-        <div class="meta-left">
-          <span id="meta-finishers">Finishers: 0</span>
-          <span id="meta-updated">Last update: —</span>
-        </div>
-      </div>
+  <footer>
+    <span>alpha-runclub.in • Spectator leaderboard</span>
+    <span>Powered by Alpha Run Club timing</span>
+  </footer>
 
-      <div class="leaderboard-wrapper">
-        <div class="leaderboard-controls">
-          <div class="tabs" role="tablist">
-            <button class="tab active" data-gender="M" role="tab">Men</button>
-            <button class="tab" data-gender="F" role="tab">Women</button>
-          </div>
-        </div>
-        <div id="public-leaderboard">
-          <div class="empty-state">Waiting for first finisher…</div>
-        </div>
-      </div>
-    </main>
+</div>
 
-    <footer class="footer-bar">
-      <span>alpha-runclub.in • Spectator leaderboard</span>
-      <span>Powered by Alpha Run Club timing</span>
-    </footer>
-  </div>
+<script>
+  const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "arena-stopwatch.firebaseapp.com",
+    databaseURL: "https://arena-stopwatch-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "arena-stopwatch"
+  };
 
-  <script>
-    // 1. Firebase config - same project as your tracking app
-    const firebaseConfig = {
-      apiKey: "AIzaSyDJkHOV1KVUfCbblgMvlO76u0Ui3J1k1sg",
-      authDomain: "arena-stopwatch.firebaseapp.com",
-      databaseURL: "https://arena-stopwatch-default-rtdb.asia-southeast1.firebasedatabase.app",
-      projectId: "arena-stopwatch",
-      storageBucket: "arena-stopwatch.firebasestorage.app",
-      messagingSenderId: "194588204548",
-      appId: "1:194588204548:web:d77a14dc5ea208e525df51",
-      measurementId: "G-P31XYVGJ2Q"
-    };
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
 
-    let db = null;
-    let globalStoppedTimes = [];
+  let PARTICIPANTS = {};
+  let STOPPED = [];
+  let VIEW = "M";
 
-    try {
-      firebase.initializeApp(firebaseConfig);
-      db = firebase.database();
-    } catch (error) {
-      console.error("Firebase Initialization Error", error.message);
-    }
+  async function loadParticipants() {
+    const r = await fetch("participants.json");
+    if (r.ok) PARTICIPANTS = await r.json();
+  }
 
+  function format(ms) {
+    ms = Math.max(0, ms || 0);
+    const m = Math.floor(ms / 60000);
+    const s = Math.floor(ms % 60000 / 1000);
+    const c = Math.floor(ms % 1000 / 10);
+    return `${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}:${String(c).padStart(2,"0")}`;
+  }
 
+  function updateMeta(n) {
+    document.getElementById("meta-finishers").textContent = `Finishers: ${n}`;
+    document.getElementById("meta-updated").textContent =
+      "Last update: " + new Date().toLocaleTimeString();
+  }
 
-    // 3. Participant mapping (BIB -> name, gender)
-    // This file now loads `participants.json` (generated from your CSV) at runtime.
-    let PARTICIPANTS = {};
+  function getList() {
+    return STOPPED
+      .filter(x => PARTICIPANTS[x.bib]?.gender === VIEW)
+      .sort((a,b) => a.timeMs - b.timeMs);
+  }
 
-    async function loadParticipants() {
-      try {
-        const resp = await fetch('participants.json');
-        if (resp.ok) {
-          PARTICIPANTS = await resp.json();
-        } else {
-          console.warn('participants.json not found (status ' + resp.status + ')');
-        }
-      } catch (e) {
-        console.warn('Failed to load participants.json', e);
+  function renderPodium(list) {
+    const el = document.getElementById("podium");
+    el.innerHTML = "";
+    const top = list.slice(0,3);
+    const order = [1,0,2];
+    const cls = ["second","first","third"];
+
+    order.forEach((i,idx) => {
+      const p = top[i];
+      if (!p) {
+        el.innerHTML += `<div class="podium-card ${cls[idx]}"></div>`;
+        return;
       }
-    }
-
-    // 4. Utility functions
-    function formatTime(ms) {
-      if (!ms || ms < 0) ms = 0;
-      const totalSeconds = Math.floor(ms / 1000);
-      const minutes = Math.floor(totalSeconds / 60);
-      const seconds = totalSeconds % 60;
-      const centis = Math.floor(ms / 10) % 100;
-          // format as MM:SS:CC (minutes:seconds:centiseconds)
-          return String(minutes).padStart(2, '0') + ':' +
-            String(seconds).padStart(2, '0') + ':' +
-            String(centis).padStart(2, '0');
-    } // [web:15]
-
-    
-
-    function updateMeta(finishersCount) {
-      const finishersEl = document.getElementById("meta-finishers");
-      const updatedEl = document.getElementById("meta-updated");
-      finishersEl.textContent = "Finishers: " + finishersCount;
-      const now = new Date();
-      updatedEl.textContent = "Last update: " +
-        now.toLocaleTimeString(undefined, { hour: "2-digit", minute: "2-digit", second: "2-digit" });
-    }
-
-    // 5. Legacy render wrapper kept for compatibility
-    function renderPublicLeaderboard() {
-      renderLeaderboardFor(_activeGender);
-    }
-
-
-    function buildLeaderboardTable(stoppedTimes) {
-      let html = `
-        <table class="leaderboard-table">
-          <thead>
-            <tr>
-              <th>Rank</th>
-              <th>Name</th>
-              <th>BIB</th>
-              <th>Time</th>
-            </tr>
-          </thead>
-          <tbody>
-      `;
-
-      stoppedTimes.forEach((item, index) => {
-        const bib = item.bib || 'NA';
-        const p = bib && PARTICIPANTS[bib] ? PARTICIPANTS[bib] : null;
-        const displayName = p ? p.name : 'Unknown';
-        const timeFormatted = formatTime(item.timeMs);
-
-        html += `
-          <tr>
-            <td class="rank-cell">${index + 1}</td>
-            <td class="name-cell">${displayName}</td>
-            <td class="bib-cell">${bib}</td>
-            <td class="time-cell">${timeFormatted}</td>
-          </tr>
-        `;
-      });
-
-      html += '</tbody></table>';
-      return `<div class="table-wrap">${html}</div>`;
-    }
-+
-+    function renderLeaderboardFor(genderKey) {
-+      const container = document.getElementById('public-leaderboard');
-+      let stoppedTimes = globalStoppedTimes || [];
-+      if (!stoppedTimes.length) {
-+        container.innerHTML = '<div class="empty-state">No finishers recorded yet.</div>';
-+        updateMeta(0);
-+        return;
-+      }
-+
-+      stoppedTimes = [...stoppedTimes].sort((a,b) => a.timeMs - b.timeMs);
-+
-+      // filter by gender using PARTICIPANTS mapping (expect 'M' or 'F')
-+      function genderOf(item) {
-+        const bib = item.bib; const p = bib && PARTICIPANTS[bib] ? PARTICIPANTS[bib] : null;
-+        if (!p || !p.gender) return '';
-+        const g = String(p.gender || '').trim().toUpperCase();
-+        if (g.startsWith('M')) return 'M';
-+        if (g.startsWith('F')) return 'F';
-+        return '';
-+      }
-+
-+      const filtered = stoppedTimes.filter(s => genderOf(s) === genderKey);
-+      const top3 = filtered.slice(0,3);
-+      const rest = filtered.slice(3);
-+
-+      const podiumHtml = top3.length
-+        ? `<div class="podium">${top3.map((item, i)=>{
-+            const bib = item.bib || 'NA'; const p = PARTICIPANTS[bib] || {}; const name = p.name || 'Unknown'; const time = formatTime(item.timeMs);
-+            const cls = i===0? 'card first' : 'card';
-+            return `<div class="${cls}"><div class="pos">#${i+1}</div><div class="name">${name}</div><div class="time">${time}</div><div class="meta">${bib}</div></div>`;
-+          }).join('')}</div>`
-+        : '<div class="empty-state">No finishers in this category yet.</div>';
-+
-+      const tableHtml = buildLeaderboardTable(filtered);
-+      container.innerHTML = podiumHtml + tableHtml;
-+      updateMeta(filtered.length);
-+    }
-*** End Patch
-
-    // 6. Sync from Firebase leaderboard node
-    let _activeGender = 'M';
-    function setActiveGender(g) {
-      _activeGender = g;
-      document.querySelectorAll('.tab').forEach(b => b.classList.toggle('active', b.getAttribute('data-gender') === g));
-      renderLeaderboardFor(g);
-    }
-
-    function setupTabs() {
-      document.querySelectorAll('.tab').forEach(btn => {
-        btn.addEventListener('click', () => setActiveGender(btn.getAttribute('data-gender')));
-      });
-    }
-
-    function startSyncListeners() {
-      if (!db) return;
-      db.ref().on("value", (snapshot) => {
-        const data = snapshot.val();
-        if (!data) {
-          globalStoppedTimes = [];
-          renderLeaderboardFor(_activeGender);
-          return;
-        }
-        globalStoppedTimes = data.leaderboard
-          ? Object.values(data.leaderboard).filter(Boolean)
-          : [];
-        renderLeaderboardFor(_activeGender);
-      });
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      loadParticipants().then(() => {
-        setupTabs();
-        setActiveGender('M');
-        startSyncListeners();
-      });
+      const person = PARTICIPANTS[p.bib] || {};
+      el.innerHTML += `
+        <div class="podium-card ${cls[idx]}">
+          <div class="podium-rank">#${i+1}</div>
+          <div class="podium-name">${person.name || "Unknown"}</div>
+          <div class="podium-time">${format(p.timeMs)}</div>
+        </div>`;
     });
-  </script>
+  }
+
+  function renderTable(list) {
+    const el = document.getElementById("leaderboard");
+    if (!list.length) {
+      el.innerHTML = `<div class="empty">No finishers yet.</div>`;
+      updateMeta(0);
+      return;
+    }
+
+    let h = `<table><thead><tr>
+      <th>Rank</th><th>Name</th><th>BIB</th><th>Time</th>
+    </tr></thead><tbody>`;
+
+    list.forEach((x,i) => {
+      const p = PARTICIPANTS[x.bib] || {};
+      h += `<tr>
+        <td class="rank">${i+1}</td>
+        <td>${p.name || "Unknown"}</td>
+        <td class="bib">${x.bib}</td>
+        <td class="time">${format(x.timeMs)}</td>
+      </tr>`;
+    });
+
+    h += "</tbody></table>";
+    el.innerHTML = h;
+    updateMeta(list.length);
+  }
+
+  function render() {
+    const list = getList();
+    renderPodium(list);
+    renderTable(list);
+    document.querySelector(".podium-title").textContent =
+      VIEW === "M" ? "Top 3 – Men" : "Top 3 – Women";
+  }
+
+  document.querySelectorAll(".tab").forEach(t => {
+    t.onclick = () => {
+      document.querySelectorAll(".tab").forEach(x => x.classList.remove("active"));
+      t.classList.add("active");
+      VIEW = t.dataset.view;
+      render();
+    };
+  });
+
+  loadParticipants().then(() => {
+    db.ref("leaderboard").on("value", snap => {
+      STOPPED = snap.val() ? Object.values(snap.val()) : [];
+      render();
+    });
+  });
+</script>
+
 </body>
 </html>
