@@ -163,15 +163,7 @@
 
     .leaderboard-table { min-width: 640px; /* allow horizontal scroll on small screens */ }
 
-    .color-cell .color-swatch {
-      width: 12px;
-      height: 12px;
-      border-radius: 3px;
-      display: inline-block;
-      border: 1px solid rgba(0,0,0,0.08);
-      vertical-align: middle;
-      margin-right: 6px;
-    }
+
 
     .leaderboard-table thead {
       background: linear-gradient(135deg, #ff1744, #000000);
@@ -285,15 +277,10 @@
       .leaderboard-table { min-width: 520px; }
     }
 
-    /* very small screens: show swatch inside name, hide color column */
-    .name-with-swatch .color-swatch { display: none; }
     @media (max-width: 420px) {
       .container { padding: 12px; }
       .header { padding: 12px 12px 8px 12px; }
       .header-right { margin-top: 6px; }
-      .name-with-swatch .color-swatch { display: inline-block; margin-right: 8px; width: 12px; height: 12px; border-radius: 3px; vertical-align: middle; border: 1px solid rgba(0,0,0,0.08); }
-      .leaderboard-table th:nth-child(5),
-      .leaderboard-table td:nth-child(5) { display: none; }
       /* further trim columns: keep Rank, Name, Time only */
       .leaderboard-table th:nth-child(2),
       .leaderboard-table td:nth-child(2) { min-width: 160px; }
@@ -446,7 +433,6 @@
               <th>Name</th>
               <th>BIB</th>
               <th>Wave</th>
-              <th>Color</th>
               <th>Time</th>
             </tr>
           </thead>
@@ -458,10 +444,6 @@
         const p = bib && PARTICIPANTS[bib] ? PARTICIPANTS[bib] : null;
         const displayName = p ? p.name : "Unknown";
         const displayWave = p ? p.wave : (item.waveNumber || "");
-        const colorData = COLORS.find(c => c.name === item.color);
-        const colorCell = colorData
-          ? `<span class="color-swatch" style="background:${colorData.hex}" title="${colorData.name}"></span><span class="color-abbr">${colorData.abbr}</span>`
-          : (item.color || "");
         const timeFormatted = formatTime(item.timeMs);
 
         html += `
@@ -470,7 +452,6 @@
             <td class="name-cell">${displayName}</td>
             <td class="bib-cell">${bib}</td>
             <td class="wave-cell">${displayWave}</td>
-            <td class="color-cell">${colorCell}</td>
             <td class="time-cell">${timeFormatted}</td>
           </tr>
         `;
