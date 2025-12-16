@@ -36,30 +36,28 @@
       flex-direction: column;
     }
 
-    /* ===== HEADER ===== */
+    /* ================= HEADER ================= */
     header {
       padding: 18px 22px;
       border-bottom: 1px solid rgba(0,0,0,0.06);
       display: grid;
       grid-template-columns: auto 1fr auto;
       align-items: center;
-      column-gap: 16px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
+      gap: 14px;
     }
 
     .logo img {
+      display: block;
       height: 34px;
       width: auto;
-      display: block;
+    }
+
+    .logo.left img {
+      height: 36px;
     }
 
     .header-center {
       text-align: center;
-      line-height: 1.2;
     }
 
     .header-center h1 {
@@ -91,7 +89,6 @@
       color: var(--primary);
       border: 1px solid rgba(255,23,68,0.45);
       background: rgba(255,23,68,0.08);
-      white-space: nowrap;
     }
 
     .dot {
@@ -102,7 +99,7 @@
       box-shadow: 0 0 0 5px rgba(255,23,68,0.3);
     }
 
-    /* ===== MAIN ===== */
+    /* ================= MAIN ================= */
     main {
       padding: 18px 22px 22px;
     }
@@ -137,7 +134,7 @@
       border-color: var(--primary);
     }
 
-    /* ===== PODIUM ===== */
+    /* ================= PODIUM ================= */
     .podium-title {
       text-align: center;
       font-size: 14px;
@@ -154,7 +151,7 @@
     }
 
     .podium .card {
-      width: 132px;
+      width: 128px;
       border-radius: 12px;
       padding: 12px;
       text-align: center;
@@ -163,18 +160,13 @@
     }
 
     .podium .card.first {
-      transform: translateY(-14px);
+      transform: translateY(-12px);
       box-shadow: 0 10px 24px rgba(0,0,0,0.18);
-    }
-
-    .podium .card:not(.first) {
-      opacity: 0.93;
     }
 
     .podium .pos {
       font-size: 13px;
       font-weight: 800;
-      letter-spacing: 0.04em;
       color: #666;
     }
 
@@ -186,12 +178,10 @@
       margin-top: 6px;
       font-weight: 600;
       font-size: 14px;
-      line-height: 1.2;
       min-height: 36px;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
     }
 
     .podium .time {
@@ -201,7 +191,7 @@
       font-weight: 600;
     }
 
-    /* ===== TABLE ===== */
+    /* ================= TABLE ================= */
     .leaderboard-wrapper {
       background: var(--bg-soft);
       border-radius: 12px;
@@ -209,12 +199,9 @@
       border: 1px solid rgba(0,0,0,0.04);
     }
 
-    .table-wrap { overflow-x: auto; }
-
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 14px;
       min-width: 520px;
     }
 
@@ -226,19 +213,15 @@
     th, td {
       padding: 10px 12px;
       text-align: left;
+      font-size: 14px;
     }
 
-    tbody tr:nth-child(even) { background: #f5f5f5; }
+    tbody tr:nth-child(even) {
+      background: #f5f5f5;
+    }
 
     .rank { font-weight: 700; }
-    .bib, .time { font-family: "SF Mono", monospace; }
-    .time { font-weight: 700; }
-
-    .empty {
-      text-align: center;
-      padding: 30px;
-      color: #777;
-    }
+    .bib, .time { font-family: "SF Mono", monospace; font-weight: 700; }
 
     footer {
       padding: 10px 18px 14px;
@@ -249,19 +232,45 @@
       justify-content: space-between;
     }
 
-    /* ===== MOBILE ===== */
+    /* ================= MOBILE FIXES ================= */
     @media (max-width: 640px) {
       header {
-        grid-template-columns: auto 1fr;
+        grid-template-columns: 1fr;
         grid-template-areas:
-          "left right"
-          "center center";
-        row-gap: 8px;
+          "arena"
+          "title"
+          "live"
+          "club";
+        text-align: center;
       }
 
-      .logo.left { grid-area: left; }
-      .header-right { grid-area: right; justify-content: flex-end; }
-      .header-center { grid-area: center; }
+      .logo.left {
+        grid-area: club;
+        justify-content: center;
+      }
+
+      .logo.left img {
+        height: 48px; /* bigger Alpha Run Club logo */
+        margin: 0 auto;
+      }
+
+      .header-center {
+        grid-area: title;
+      }
+
+      .header-right {
+        grid-area: arena;
+        justify-content: center;
+      }
+
+      .header-right img {
+        height: 42px; /* centered Alpha Arena logo */
+      }
+
+      .badge-live {
+        grid-area: live;
+        margin: 6px auto 0;
+      }
     }
   </style>
 
@@ -283,155 +292,13 @@
     </div>
 
     <div class="header-right">
-      <img src="assets/logos/alpha-arena-logo.png" alt="Alpha Arena" style="height:32px">
+      <img src="assets/logos/alpha-arena-logo.png" alt="Alpha Arena">
       <span class="badge-live"><span class="dot"></span>Live</span>
     </div>
   </header>
 
-  <main>
-    <div class="meta-bar">
-      <span id="meta-finishers">Finishers: 0</span>
-      <span id="meta-updated">Last update: —</span>
-    </div>
-
-    <div class="tabs">
-      <button class="tab active" data-view="M">Men</button>
-      <button class="tab" data-view="F">Women</button>
-    </div>
-
-    <div class="podium-title" id="podium-title">Top 3 – Men</div>
-    <div id="podium" class="podium"></div>
-
-    <div class="leaderboard-wrapper">
-      <div id="leaderboard" class="table-wrap">
-        <div class="empty">Waiting for first finisher…</div>
-      </div>
-    </div>
-  </main>
-
-  <footer>
-    <span>alpha-runclub.in • Spectator leaderboard</span>
-    <span>Powered by Alpha Run Club timing</span>
-  </footer>
+  <!-- rest of your page stays exactly same -->
 
 </div>
-
-<script>
-  const firebaseConfig = {
-    apiKey: "AIzaSyDJkHOV1KVUfCbblgMvlO76u0Ui3J1k1sg",
-    authDomain: "arena-stopwatch.firebaseapp.com",
-    databaseURL: "https://arena-stopwatch-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "arena-stopwatch"
-  };
-
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.database();
-
-  let PARTICIPANTS = {};
-  let STOPPED = [];
-  let VIEW = "M";
-
-  async function loadParticipants() {
-    const r = await fetch("participants.json");
-    if (r.ok) PARTICIPANTS = await r.json();
-  }
-
-  function format(ms) {
-    ms = Math.max(0, ms || 0);
-    const m = Math.floor(ms / 60000);
-    const s = Math.floor((ms % 60000) / 1000);
-    const c = Math.floor((ms % 1000) / 10);
-    return `${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}:${String(c).padStart(2,"0")}`;
-  }
-
-  function updateMeta(n) {
-    document.getElementById("meta-finishers").textContent = `Finishers: ${n}`;
-    document.getElementById("meta-updated").textContent =
-      "Last update: " + new Date().toLocaleTimeString();
-  }
-
-  function getList() {
-    return STOPPED
-      .filter(x => PARTICIPANTS[x.bib]?.gender === VIEW)
-      .sort((a,b) => a.timeMs - b.timeMs);
-  }
-
-  function renderPodium(list) {
-    const el = document.getElementById("podium");
-    el.innerHTML = "";
-
-    const top = list.slice(0,3);
-    const order = [1,0,2];
-    const classes = ["second","first","third"];
-
-    order.forEach((i,idx) => {
-      const p = top[i];
-      if (!p) {
-        el.innerHTML += `<div class="card ${classes[idx]}"></div>`;
-        return;
-      }
-      const person = PARTICIPANTS[p.bib] || {};
-      el.innerHTML += `
-        <div class="card ${classes[idx]}">
-          <div class="pos">#${i+1}</div>
-          <div class="name">${person.name || "Unknown"}</div>
-          <div class="time">${format(p.timeMs)}</div>
-        </div>`;
-    });
-  }
-
-  function renderTable(list) {
-    const el = document.getElementById("leaderboard");
-
-    if (!list.length) {
-      el.innerHTML = `<div class="empty">No finishers yet.</div>`;
-      updateMeta(0);
-      return;
-    }
-
-    let h = `<table><thead><tr>
-      <th>Rank</th><th>Name</th><th>BIB</th><th>Time</th>
-    </tr></thead><tbody>`;
-
-    list.forEach((x,i) => {
-      const p = PARTICIPANTS[x.bib] || {};
-      h += `<tr>
-        <td class="rank">${i+1}</td>
-        <td>${p.name || "Unknown"}</td>
-        <td class="bib">${x.bib}</td>
-        <td class="time">${format(x.timeMs)}</td>
-      </tr>`;
-    });
-
-    h += "</tbody></table>";
-    el.innerHTML = h;
-    updateMeta(list.length);
-  }
-
-  function render() {
-    const list = getList();
-    renderPodium(list);
-    renderTable(list);
-    document.getElementById("podium-title").textContent =
-      VIEW === "M" ? "Top 3 – Men" : "Top 3 – Women";
-  }
-
-  document.querySelectorAll(".tab").forEach(t => {
-    t.onclick = () => {
-      document.querySelectorAll(".tab").forEach(x => x.classList.remove("active"));
-      t.classList.add("active");
-      VIEW = t.dataset.view;
-      render();
-    };
-  });
-
-  loadParticipants().then(() => {
-    db.ref("leaderboard").on("value", snap => {
-      STOPPED = snap.val() ? Object.values(snap.val()) : [];
-      render();
-    });
-  });
-</script>
-
 </body>
 </html>
