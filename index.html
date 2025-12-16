@@ -47,7 +47,7 @@ header{
 }
 
 .logo img{
-  height:36px;
+  height:79px;
   display:block;
 }
 
@@ -73,13 +73,13 @@ header{
 }
 
 .header-right img{
-  height:32px;
+  height:69px;
 }
 
 .badge-live{
   display:inline-flex;
   align-items:center;
-  gap:6px;
+  gap:7px;
   padding:4px 10px;
   border-radius:999px;
   font-size:11px;
@@ -228,32 +228,48 @@ footer{
 }
 
 /* ================= MOBILE FIXES ================= */
-@media(max-width:640px){
-  header{
-    grid-template-columns:1fr;
+@media (max-width: 640px) {
+  header {
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
-      "arena"
-      "title"
-      "live"
-      "club";
-    text-align:center;
+      "arena club "
+      "title title"
+      "live live";
+    row-gap: 10px;
+    text-align: center;
   }
 
-  .logo.left{grid-area:club}
-  .logo.left img{height:48px;margin:0 auto}
-
-  .header-center{grid-area:title}
-
-  .header-right{
-    grid-area:arena;
-    justify-content:center;
+  /* Alpha Run Club logo (center) */
+  .logo.left {
+    grid-area: club;
+    justify-content: center;
   }
 
-  .header-right img{height:42px}
+  .logo.left img {
+    height: 50px;
+    margin: 0 auto;
+  }
 
-  .badge-live{
-    grid-area:live;
-    margin:6px auto 0;
+  /* Title */
+  .header-center {
+    grid-area: title;
+  }
+
+  /* Alpha Arena logo (left) */
+  .header-right {
+    grid-area: arena;
+    justify-content: flex-start;
+  }
+
+  .header-right img {
+    height: 42px;
+  }
+
+  /* Live badge (right) */
+  .badge-live {
+    grid-area: live;
+    margin-left: auto;
+    margin-right: 0;
   }
 }
 </style>
@@ -267,7 +283,7 @@ footer{
 
 <header>
   <div class="logo left">
-    <img src="assets/logos/alpha-run-club-logo.png">
+    <img src="assets/logos/alpha-run-club-logo.png" alt="Alpha Run Club">
   </div>
 
   <div class="header-center">
@@ -276,10 +292,14 @@ footer{
   </div>
 
   <div class="header-right">
-    <img src="assets/logos/alpha-arena-logo.png">
-    <span class="badge-live"><span class="dot"></span>Live</span>
+    <img src="assets/logos/alpha-arena-logo.png" alt="Alpha Arena">
   </div>
+
+  <span class="badge-live">
+    <span class="dot"></span>Live
+  </span>
 </header>
+
 
 <main>
   <div class="meta-bar">
