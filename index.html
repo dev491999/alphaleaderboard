@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <style>
-:root{
+:root {
   --primary:#ff1744;
   --text:#1f2121;
   --border:#e0e0e0;
@@ -42,22 +42,13 @@ header{
   border-bottom:1px solid rgba(0,0,0,.06);
   display:grid;
   grid-template-columns:auto 1fr auto;
-  grid-template-areas:"arena title live";
   align-items:center;
   gap:14px;
 }
 
-.header-right{grid-area:arena}
-.header-center{grid-area:title}
-.badge-live{grid-area:live}
-
-.header-right{
-  display:flex;
-  justify-content:flex-start;
-}
-
-.header-right img{
-  height:68px;
+.logo img{
+  height:79px;
+  display:block;
 }
 
 .header-center{
@@ -73,6 +64,16 @@ header{
 .header-center p{
   font-size:12px;
   color:#666;
+}
+
+.header-right{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.header-right img{
+  height:69px;
 }
 
 .badge-live{
@@ -129,37 +130,33 @@ main{padding:18px 22px 22px}
   border-color:var(--primary);
 }
 
-/* ================= PODIUM (ALL 5 STEPS) ================= */
-
+/* ================= PODIUM ================= */
 .podium-title{
   text-align:center;
   font-weight:600;
-  margin:14px 0 10px;
+  margin:12px 0;
 }
 
-/* STEP 1 + 2: Correct order & strong #1 */
 .podium{
   display:flex;
   justify-content:center;
   align-items:flex-end;
-  gap:14px;
-  margin-bottom:20px;
+  gap:10px;
+  margin-bottom:18px;
 }
 
 .podium .card{
-  width:120px;
+  width:128px;
   background:#fff;
-  border-radius:14px;
-  padding:14px 10px;
+  border-radius:12px;
+  padding:12px;
   text-align:center;
   box-shadow:0 6px 16px rgba(0,0,0,.12);
-  transition:transform .2s ease, box-shadow .2s ease;
 }
 
 .podium .card.first{
-  transform:translateY(-18px) scale(1.05);
-  box-shadow:0 16px 30px rgba(0,0,0,.22);
-  border:2px solid #ffd700;
+  transform:translateY(-12px);
+  box-shadow:0 10px 24px rgba(0,0,0,.18);
 }
 
 .podium .pos{
@@ -168,40 +165,21 @@ main{padding:18px 22px 22px}
   color:#666;
 }
 
-.podium .card.first .pos{
-  color:#d4af37;
-}
+.podium .card.first .pos{color:#d4af37}
 
 .podium .name{
-  margin-top:8px;
+  margin-top:6px;
   font-weight:600;
   min-height:36px;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:14px;
 }
 
 .podium .time{
   margin-top:6px;
   font-family:"SF Mono",monospace;
-  font-weight:700;
-  font-size:13px;
-}
-
-/* STEP 4: Empty podium safety */
-.podium .card:empty{
-  box-shadow:none;
-  background:transparent;
-  border:none;
-}
-
-/* STEP 5: Desktop hover polish */
-@media(min-width:641px){
-  .podium .card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 14px 28px rgba(0,0,0,.2);
-  }
+  font-weight:600;
 }
 
 /* ================= TABLE ================= */
@@ -249,33 +227,49 @@ footer{
   justify-content:space-between;
 }
 
-/* ================= MOBILE PODIUM FIX ================= */
-@media(max-width:640px){
-  header{
-    grid-template-columns:1fr 1fr;
+/* ================= MOBILE FIXES ================= */
+@media (max-width: 640px) {
+  header {
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
-      "arena title"
+      "arena club "
+      "title title"
       "live live";
-    row-gap:10px;
+    row-gap: 10px;
+    text-align: center;
   }
 
-  .badge-live{margin:0 auto}
-
-  .podium{
-    gap:10px;
+  /* Alpha Run Club logo (center) */
+  .logo.left {
+    grid-area: club;
+    justify-content: center;
   }
 
-  .podium .card{
-    width:104px;
-    padding:12px 8px;
+  .logo.left img {
+    height: 50px;
+    margin: 0 auto;
   }
 
-  .podium .card.first{
-    transform:translateY(-14px) scale(1.03);
+  /* Title */
+  .header-center {
+    grid-area: title;
   }
 
-  .podium .name{
-    font-size:13px;
+  /* Alpha Arena logo (left) */
+  .header-right {
+    grid-area: arena;
+    justify-content: flex-start;
+  }
+
+  .header-right img {
+    height: 42px;
+  }
+
+  /* Live badge (right) */
+  .badge-live {
+    grid-area: live;
+    margin-left: auto;
+    margin-right: 0;
   }
 }
 </style>
@@ -288,8 +282,8 @@ footer{
 <div class="container">
 
 <header>
-  <div class="header-right">
-    <img src="assets/logos/alpha-arena-logo.png" alt="Alpha Arena">
+  <div class="logo left">
+    <img src="assets/logos/alpha-run-club-logo.png" alt="Alpha Run Club">
   </div>
 
   <div class="header-center">
@@ -297,10 +291,15 @@ footer{
     <p>Alpha Arena • Live Results Leaderboard</p>
   </div>
 
+  <div class="header-right">
+    <img src="assets/logos/alpha-arena-logo.png" alt="Alpha Arena">
+  </div>
+
   <span class="badge-live">
     <span class="dot"></span>Live
   </span>
 </header>
+
 
 <main>
   <div class="meta-bar">
@@ -330,7 +329,7 @@ footer{
 
 <script>
 const firebaseConfig={
-  apiKey:"AIzaSyDJkHOV1KVUfCbblgMvlO76u0Ui3J1k1sg",
+  apiKey:"YOUR_API_KEY",
   authDomain:"arena-stopwatch.firebaseapp.com",
   databaseURL:"https://arena-stopwatch-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId:"arena-stopwatch"
