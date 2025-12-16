@@ -1,304 +1,388 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Alpha Run Club Leaderboard</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+<title>Alpha Run Club Leaderboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <style>
-    :root {
-      --primary: #ff1744;
-      --text: #1f2121;
-      --border: #e0e0e0;
-      --bg-soft: #fafafa;
-    }
+<style>
+:root {
+  --primary:#ff1744;
+  --text:#1f2121;
+  --border:#e0e0e0;
+  --soft:#fafafa;
+}
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+*{box-sizing:border-box;margin:0;padding:0}
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #ffffff, #ececec);
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      padding: 20px;
-    }
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:radial-gradient(circle at top,#fff,#ececec);
+  color:var(--text);
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  padding:20px;
+}
 
-    .container {
-      max-width: 1100px;
-      width: 100%;
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 18px 45px rgba(0,0,0,0.18);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
+.container{
+  max-width:1100px;
+  width:100%;
+  background:#fff;
+  border-radius:16px;
+  box-shadow:0 18px 45px rgba(0,0,0,.18);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
 
-    /* ================= HEADER ================= */
-    header {
-      padding: 18px 22px;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      align-items: center;
-      gap: 14px;
-    }
+/* ================= HEADER ================= */
+header{
+  padding:18px 22px;
+  border-bottom:1px solid rgba(0,0,0,.06);
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:14px;
+}
 
-    .logo img {
-      display: block;
-      height: 34px;
-      width: auto;
-    }
+.logo img{
+  height:36px;
+  display:block;
+}
 
-    .logo.left img {
-      height: 36px;
-    }
+.header-center{
+  text-align:center;
+}
 
-    .header-center {
-      text-align: center;
-    }
+.header-center h1{
+  font-size:20px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
 
-    .header-center h1 {
-      font-size: 20px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
+.header-center p{
+  font-size:12px;
+  color:#666;
+}
 
-    .header-center p {
-      font-size: 12px;
-      color: #666;
-      margin-top: 2px;
-    }
+.header-right{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
 
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+.header-right img{
+  height:32px;
+}
 
-    .badge-live {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--primary);
-      border: 1px solid rgba(255,23,68,0.45);
-      background: rgba(255,23,68,0.08);
-    }
+.badge-live{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:600;
+  color:var(--primary);
+  background:rgba(255,23,68,.08);
+  border:1px solid rgba(255,23,68,.45);
+}
 
-    .dot {
-      width: 7px;
-      height: 7px;
-      background: var(--primary);
-      border-radius: 50%;
-      box-shadow: 0 0 0 5px rgba(255,23,68,0.3);
-    }
+.dot{
+  width:7px;
+  height:7px;
+  background:var(--primary);
+  border-radius:50%;
+  box-shadow:0 0 0 5px rgba(255,23,68,.3);
+}
 
-    /* ================= MAIN ================= */
-    main {
-      padding: 18px 22px 22px;
-    }
+/* ================= MAIN ================= */
+main{padding:18px 22px 22px}
 
-    .meta-bar {
-      display: flex;
-      justify-content: space-between;
-      font-size: 12px;
-      color: #777;
-      margin-bottom: 14px;
-    }
+.meta-bar{
+  display:flex;
+  justify-content:space-between;
+  font-size:12px;
+  color:#777;
+  margin-bottom:14px;
+}
 
-    .tabs {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 14px;
-    }
+.tabs{
+  display:flex;
+  gap:8px;
+  margin-bottom:12px;
+}
 
-    .tab {
-      padding: 6px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: #fff;
-      font-size: 12px;
-      font-weight: 600;
-      cursor: pointer;
-    }
+.tab{
+  padding:6px 14px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:#fff;
+  font-size:12px;
+  font-weight:600;
+  cursor:pointer;
+}
 
-    .tab.active {
-      background: var(--primary);
-      color: #fff;
-      border-color: var(--primary);
-    }
+.tab.active{
+  background:var(--primary);
+  color:#fff;
+  border-color:var(--primary);
+}
 
-    /* ================= PODIUM ================= */
-    .podium-title {
-      text-align: center;
-      font-size: 14px;
-      font-weight: 600;
-      margin: 12px 0;
-    }
+/* ================= PODIUM ================= */
+.podium-title{
+  text-align:center;
+  font-weight:600;
+  margin:12px 0;
+}
 
-    .podium {
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      gap: 10px;
-      margin-bottom: 18px;
-    }
+.podium{
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+  gap:10px;
+  margin-bottom:18px;
+}
 
-    .podium .card {
-      width: 128px;
-      border-radius: 12px;
-      padding: 12px;
-      text-align: center;
-      background: #fff;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-    }
+.podium .card{
+  width:128px;
+  background:#fff;
+  border-radius:12px;
+  padding:12px;
+  text-align:center;
+  box-shadow:0 6px 16px rgba(0,0,0,.12);
+}
 
-    .podium .card.first {
-      transform: translateY(-12px);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.18);
-    }
+.podium .card.first{
+  transform:translateY(-12px);
+  box-shadow:0 10px 24px rgba(0,0,0,.18);
+}
 
-    .podium .pos {
-      font-size: 13px;
-      font-weight: 800;
-      color: #666;
-    }
+.podium .pos{
+  font-size:13px;
+  font-weight:800;
+  color:#666;
+}
 
-    .podium .card.first .pos {
-      color: #d4af37;
-    }
+.podium .card.first .pos{color:#d4af37}
 
-    .podium .name {
-      margin-top: 6px;
-      font-weight: 600;
-      font-size: 14px;
-      min-height: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+.podium .name{
+  margin-top:6px;
+  font-weight:600;
+  min-height:36px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 
-    .podium .time {
-      margin-top: 6px;
-      font-family: "SF Mono", monospace;
-      font-size: 13px;
-      font-weight: 600;
-    }
+.podium .time{
+  margin-top:6px;
+  font-family:"SF Mono",monospace;
+  font-weight:600;
+}
 
-    /* ================= TABLE ================= */
-    .leaderboard-wrapper {
-      background: var(--bg-soft);
-      border-radius: 12px;
-      padding: 14px;
-      border: 1px solid rgba(0,0,0,0.04);
-    }
+/* ================= TABLE ================= */
+.wrapper{
+  background:var(--soft);
+  border-radius:12px;
+  padding:14px;
+  border:1px solid rgba(0,0,0,.04);
+}
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 520px;
-    }
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:520px;
+}
 
-    thead {
-      background: linear-gradient(135deg, #ff1744, #000);
-      color: #fff;
-    }
+thead{
+  background:linear-gradient(135deg,#ff1744,#000);
+  color:#fff;
+}
 
-    th, td {
-      padding: 10px 12px;
-      text-align: left;
-      font-size: 14px;
-    }
+th,td{
+  padding:10px 12px;
+  text-align:left;
+  font-size:14px;
+}
 
-    tbody tr:nth-child(even) {
-      background: #f5f5f5;
-    }
+tbody tr:nth-child(even){background:#f5f5f5}
 
-    .rank { font-weight: 700; }
-    .bib, .time { font-family: "SF Mono", monospace; font-weight: 700; }
+.rank{font-weight:700}
+.bib,.time{font-family:"SF Mono",monospace;font-weight:700}
 
-    footer {
-      padding: 10px 18px 14px;
-      border-top: 1px solid rgba(0,0,0,0.06);
-      font-size: 11px;
-      color: #888;
-      display: flex;
-      justify-content: space-between;
-    }
+.empty{
+  padding:26px;
+  text-align:center;
+  color:#777;
+}
 
-    /* ================= MOBILE FIXES ================= */
-    @media (max-width: 640px) {
-      header {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-          "arena"
-          "title"
-          "live"
-          "club";
-        text-align: center;
-      }
+footer{
+  padding:10px 18px 14px;
+  border-top:1px solid rgba(0,0,0,.06);
+  font-size:11px;
+  color:#888;
+  display:flex;
+  justify-content:space-between;
+}
 
-      .logo.left {
-        grid-area: club;
-        justify-content: center;
-      }
+/* ================= MOBILE FIXES ================= */
+@media(max-width:640px){
+  header{
+    grid-template-columns:1fr;
+    grid-template-areas:
+      "arena"
+      "title"
+      "live"
+      "club";
+    text-align:center;
+  }
 
-      .logo.left img {
-        height: 48px; /* bigger Alpha Run Club logo */
-        margin: 0 auto;
-      }
+  .logo.left{grid-area:club}
+  .logo.left img{height:48px;margin:0 auto}
 
-      .header-center {
-        grid-area: title;
-      }
+  .header-center{grid-area:title}
 
-      .header-right {
-        grid-area: arena;
-        justify-content: center;
-      }
+  .header-right{
+    grid-area:arena;
+    justify-content:center;
+  }
 
-      .header-right img {
-        height: 42px; /* centered Alpha Arena logo */
-      }
+  .header-right img{height:42px}
 
-      .badge-live {
-        grid-area: live;
-        margin: 6px auto 0;
-      }
-    }
-  </style>
+  .badge-live{
+    grid-area:live;
+    margin:6px auto 0;
+  }
+}
+</style>
 
-  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
 </head>
 
 <body>
 <div class="container">
 
-  <header>
-    <div class="logo left">
-      <img src="assets/logos/alpha-run-club-logo.png" alt="Alpha Run Club">
-    </div>
+<header>
+  <div class="logo left">
+    <img src="assets/logos/alpha-run-club-logo.png">
+  </div>
 
-    <div class="header-center">
-      <h1>Alpha Run Club</h1>
-      <p>Alpha Arena • Live Results Leaderboard</p>
-    </div>
+  <div class="header-center">
+    <h1>Alpha Run Club</h1>
+    <p>Alpha Arena • Live Results Leaderboard</p>
+  </div>
 
-    <div class="header-right">
-      <img src="assets/logos/alpha-arena-logo.png" alt="Alpha Arena">
-      <span class="badge-live"><span class="dot"></span>Live</span>
-    </div>
-  </header>
+  <div class="header-right">
+    <img src="assets/logos/alpha-arena-logo.png">
+    <span class="badge-live"><span class="dot"></span>Live</span>
+  </div>
+</header>
 
-  <!-- rest of your page stays exactly same -->
+<main>
+  <div class="meta-bar">
+    <span id="meta-finishers">Finishers: 0</span>
+    <span id="meta-updated">Last update: —</span>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" data-gender="M">Men</button>
+    <button class="tab" data-gender="F">Women</button>
+  </div>
+
+  <div class="podium-title" id="podium-title">Top 3 – Men</div>
+  <div class="podium" id="podium"></div>
+
+  <div class="wrapper">
+    <div id="leaderboard"><div class="empty">Waiting for finishers…</div></div>
+  </div>
+</main>
+
+<footer>
+  <span>alpha-runclub.in • Spectator leaderboard</span>
+  <span>Powered by Alpha Run Club timing</span>
+</footer>
 
 </div>
+
+<script>
+const firebaseConfig={
+  apiKey:"YOUR_API_KEY",
+  authDomain:"arena-stopwatch.firebaseapp.com",
+  databaseURL:"https://arena-stopwatch-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId:"arena-stopwatch"
+};
+
+firebase.initializeApp(firebaseConfig);
+const db=firebase.database();
+
+let PARTICIPANTS={},DATA=[],ACTIVE="M";
+
+fetch("participants.json").then(r=>r.json()).then(j=>PARTICIPANTS=j);
+
+function fmt(ms){
+  ms=Math.max(0,ms||0);
+  const m=Math.floor(ms/60000);
+  const s=Math.floor(ms/1000)%60;
+  const c=Math.floor(ms/10)%100;
+  return `${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}:${String(c).padStart(2,"0")}`;
+}
+
+function updateMeta(n){
+  metaFinishers.textContent=`Finishers: ${n}`;
+  metaUpdated.textContent=`Last update: ${new Date().toLocaleTimeString()}`;
+}
+
+function render(){
+  const list=DATA
+    .filter(x=>PARTICIPANTS[x.bib]?.gender===ACTIVE)
+    .sort((a,b)=>a.timeMs-b.timeMs);
+
+  podium.innerHTML="";
+  [1,0,2].forEach(i=>{
+    const r=list[i];
+    if(!r){podium.innerHTML+=`<div class="card"></div>`;return;}
+    const p=PARTICIPANTS[r.bib]||{};
+    podium.innerHTML+=`
+      <div class="card ${i===0?"first":""}">
+        <div class="pos">#${i+1}</div>
+        <div class="name">${p.name||"Unknown"}</div>
+        <div class="time">${fmt(r.timeMs)}</div>
+      </div>`;
+  });
+
+  if(!list.length){
+    leaderboard.innerHTML=`<div class="empty">No finishers yet.</div>`;
+    updateMeta(0);return;
+  }
+
+  let h=`<table><thead><tr><th>Rank</th><th>Name</th><th>BIB</th><th>Time</th></tr></thead><tbody>`;
+  list.forEach((r,i)=>{
+    const p=PARTICIPANTS[r.bib]||{};
+    h+=`<tr><td class="rank">${i+1}</td><td>${p.name}</td><td class="bib">${r.bib}</td><td class="time">${fmt(r.timeMs)}</td></tr>`;
+  });
+  h+="</tbody></table>";
+  leaderboard.innerHTML=h;
+  updateMeta(list.length);
+
+  podiumTitle.textContent=ACTIVE==="M"?"Top 3 – Men":"Top 3 – Women";
+}
+
+document.querySelectorAll(".tab").forEach(b=>{
+  b.onclick=()=>{
+    document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
+    b.classList.add("active");
+    ACTIVE=b.dataset.gender;
+    render();
+  };
+});
+
+db.ref("leaderboard").on("value",s=>{
+  DATA=s.val()?Object.values(s.val()):[];
+  render();
+});
+</script>
 </body>
 </html>
