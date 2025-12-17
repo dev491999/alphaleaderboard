@@ -11,7 +11,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 
 body{
-  font-family:-apple-system,BlinkMacSystemFont,ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background:radial-gradient(circle at top,#fff,#ececec);
   color:var(--text);
   min-height:100vh;
@@ -229,14 +229,170 @@ tr.dnf .time{
   .header-right { grid-area: arena; }
   .badge-live { grid-area: live; }
 
-@media(max-width:640px){
+@media (max-width: 640px) {
+
+  /* ===== BODY ===== */
+  body{
+    padding:10px;
+  }
+
+  .container{
+    border-radius:12px;
+  }
+
+  /* ===== HEADER ===== */
   header{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1fr;
     grid-template-areas:
-      "arena club"
-      "title title"
-      "live live";
+      "arena"
+      "title"
+      "club"
+      "live";
     text-align:center;
     row-gap:10px;
+    padding:14px;
+  }
+
+  .header-right{
+    grid-area:arena;
+    justify-content:center;
+  }
+
+  .header-center{
+    grid-area:title;
+  }
+
+  .logo.left{
+    grid-area:club;
+    display:flex;
+    justify-content:center;
+  }
+
+  .badge-live{
+    grid-area:live;
+    margin:0 auto;
+  }
+
+  .logo img{
+    height:46px;
+  }
+
+  .header-right img{
+    height:42px;
+  }
+
+  .header-center h1{
+    font-size:16px;
+  }
+
+  .header-center p{
+    font-size:11px;
+  }
+
+  /* ===== META BAR ===== */
+  .meta-bar{
+    flex-direction:column;
+    gap:4px;
+    text-align:center;
+  }
+
+  /* ===== TABS ===== */
+  .tabs{
+    justify-content:center;
+  }
+
+  .tab{
+    padding:8px 18px;
+    font-size:13px;
+  }
+
+  /* ===== PODIUM ===== */
+  .podium{
+    gap:6px;
+  }
+
+  .podium .card{
+    width:96px;
+    padding:10px;
+  }
+
+  .podium .name{
+    font-size:12px;
+    min-height:30px;
+  }
+
+  .podium .time{
+    font-size:12px;
+  }
+
+  /* ===== TABLE ===== */
+  table{
+    min-width:100%;
+    font-size:13px;
+  }
+
+  th:nth-child(3),
+  td:nth-child(3){
+    display:none; /* Hide BIB on mobile */
+  }
+
+  th, td{
+    padding:8px 8px;
+  }
+
+  .rank{
+    width:36px;
+  }
+
+  /* ===== FOOTER ===== */
+  footer{
+    flex-direction:column;
+    gap:4px;
+    text-align:center;
+  }
+}
+/* DARK MODE */
+@media (prefers-color-scheme: dark) {
+  body{
+    background:#0f0f0f;
+    color:#eaeaea;
+  }
+
+  .container{
+    background:#161616;
+    box-shadow:0 18px 45px rgba(0,0,0,.6);
+  }
+
+  header{
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+
+  .meta-bar{
+    color:#aaa;
+  }
+
+  .tab{
+    background:#1f1f1f;
+    border-color:#333;
+    color:#ddd;
+  }
+
+  .tab.active{
+    background:var(--primary);
+    color:#fff;
+  }
+
+  .wrapper{
+    background:#1a1a1a;
+    border-color:#2a2a2a;
+  }
+
+  table tbody tr:nth-child(even){
+    background:#1f1f1f;
+  }
+
+  footer{
+    border-top:1px solid rgba(255,255,255,.08);
+    color:#aaa;
   }
 }
