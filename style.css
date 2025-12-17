@@ -255,15 +255,7 @@ tr.dnf .time{
 
 @media (max-width: 640px) {
   
-  .wrapper::after{
-  content:"← swipe →";
-  display:block;
-  text-align:center;
-  font-size:11px;
-  color:var(--muted);
-  margin-top:6px;
-}
-
+ 
   /* ===== BODY ===== */
   body{
     padding:10px;
