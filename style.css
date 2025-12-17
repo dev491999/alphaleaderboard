@@ -150,11 +150,15 @@ main{padding:18px 22px 22px}
   box-shadow:0 6px 16px rgba(0,0,0,.12);
   position:relative;
   will-change: transform, opacity;
+  min-height:130px;
 }
 
 .podium .card.first{
-  transform:translateY(-12px);
-  box-shadow:0 10px 24px rgba(0,0,0,.18);
+  min-height:148px;
+  transform:translateY(-14px) scale(1.04);
+}
+.podium .card:empty{
+  animation:none;
 }
 
 .podium .pos{
@@ -165,6 +169,12 @@ main{padding:18px 22px 22px}
 
 .podium .card.first .pos{color:#d4af37}
 
+.podium .card:empty{
+  min-height:80px;
+  background:transparent;
+  box-shadow:none;
+  border:none;
+}
 .podium .name{
   margin-top:6px;
   font-weight:600;
@@ -339,6 +349,7 @@ tr.dnf .time{
   .podium .card{
     width:96px;
     padding:10px;
+    min-height:120px;
   }
 
   .podium .name{
