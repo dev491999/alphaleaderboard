@@ -46,7 +46,7 @@ function render(){
 
   podium.innerHTML="";
   [1,0,2].forEach(i=>{
-    const r=list[i];
+    const r=finishers[i];
     if(!r){podium.innerHTML+=`<div class="card"></div>`;return;}
     const p=PARTICIPANTS[r.bib]||{};
     podium.innerHTML+=`
@@ -63,20 +63,27 @@ function render(){
     return;
   }
 
-  let h=`<table><thead><tr><th>Rank</th><th>Name</th><th>BIB</th><th>Time</th></tr></thead><tbody>`;
-  list.forEach((r,i)=>{
-    const p=PARTICIPANTS[r.bib]||{};
-    h+=`<tr>
-      <td class="rank">${i+1}</td>
-      <td>${p.name}</td>
-      <td class="bib">${r.bib}</td>
-      <td class="time">${fmt(r.timeMs)}</td>
-    </tr>`;
-  });
-  h+="</tbody></table>";
-  leaderboard.innerHTML=h;
+      let h = `<table><thead>
+      <tr><th>Rank</th><th>Name</th><th>BIB</th><th>Time</th></tr>
+      </thead><tbody>`;
 
-  updateMeta(list.length);
+    list.forEach((r, i) => {
+    const p = PARTICIPANTS[r.bib] || {};
+      const isDNF = r.timeMs <= 0;
+
+    h += `<tr class="${isDNF ? 'dnf' : ''}">
+    <td class="rank">${isDNF ? '-' : i + 1}</td>
+    <td>${p.name || "Unknown"}</td>
+    <td class="bib">${r.bib || ''}</td>
+    <td class="time">${fmt(r.timeMs)}</td>
+    </tr>`;
+      });
+
+    h += "</tbody></table>";
+    leaderboard.innerHTML = h;
+
+
+  updateMeta(finishers.length);
   podiumTitle.textContent=ACTIVE==="M"?"Top 3 – Men":"Top 3 – Women";
 }
 
