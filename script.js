@@ -21,10 +21,10 @@ fetch("participants.json")
   .then(j=>PARTICIPANTS=j);
 
 function fmt(ms){
-  ms=Math.max(0,ms||0);
-  const m=Math.floor(ms/60000);
-  const s=Math.floor(ms/1000)%60;
-  const c=Math.floor(ms/10)%100;
+  if (ms <= 0) return "DNF";
+  const m = Math.floor(ms / 60000);
+  const s = Math.floor(ms / 1000) % 60;
+  const c = Math.floor(ms / 10) % 100;
   return `${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}:${String(c).padStart(2,"0")}`;
 }
 
@@ -34,9 +34,15 @@ function updateMeta(n){
 }
 
 function render(){
-  const list=DATA
-    .filter(x=>PARTICIPANTS[x.bib]?.gender===ACTIVE)
-    .sort((a,b)=>a.timeMs-b.timeMs);
+  const all = DATA.filter(x => PARTICIPANTS[x.bib]?.gender === ACTIVE);
+
+    const finishers = all
+  .filter(x => x.timeMs > 0)
+  .sort((a,b)=>a.timeMs - b.timeMs);
+
+    const dnfs = all.filter(x => x.timeMs <= 0);
+
+    const list = [...finishers, ...dnfs];
 
   podium.innerHTML="";
   [1,0,2].forEach(i=>{
