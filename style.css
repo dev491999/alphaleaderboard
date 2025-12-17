@@ -274,16 +274,14 @@ tr.dnf .time{
 
   /* ===== HEADER ===== */
   header{
-    grid-template-columns:1fr;
-    grid-template-areas:
-      "arena"
-      "title"
-      "club"
-      "live";
-    text-align:center;
-    row-gap:10px;
-    padding:14px;
-  }
+  grid-template-columns:auto 1fr auto;
+  grid-template-areas:
+    "club title arena"
+    "live live live";
+  align-items:center;
+  row-gap:8px;
+  padding:14px;
+}
 
   .header-right{
     grid-area:arena;
@@ -297,23 +295,23 @@ tr.dnf .time{
   .logo.left{
     grid-area:club;
     display:flex;
-    justify-content:center;
+    justify-content:flex-start;
   }
 
   .badge-live{
      padding:4px 8px;
      font-size:10px;
     grid-area:live;
-    justify-self:center;
+    justify-self:end;
     margin:0;
   }
 
   .logo img{
-    height:46px;
+    height:60px;
   }
 
   .header-right img{
-    height:42px;
+    height:60px;
   }
 
   .header-center h1{
