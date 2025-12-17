@@ -254,6 +254,15 @@ tr.dnf .time{
   .badge-live { grid-area: live; }
 
 @media (max-width: 640px) {
+  
+  .wrapper::after{
+  content:"← swipe →";
+  display:block;
+  text-align:center;
+  font-size:11px;
+  color:var(--muted);
+  margin-top:6px;
+}
 
   /* ===== BODY ===== */
   body{
@@ -358,10 +367,6 @@ tr.dnf .time{
     font-size:13px;
   }
 
-  th:nth-child(3),
-  td:nth-child(3){
-    display:none; /* Hide BIB on mobile */
-  }
 
   th, td{
     padding:8px 8px;
@@ -370,6 +375,13 @@ tr.dnf .time{
   .rank{
     width:36px;
   }
+  /* Push BIB to the right, swipe to reveal */
+th:nth-child(3),
+td:nth-child(3){
+  min-width:70px;
+  text-align:center;
+  opacity:0.75;
+}
 
   /* ===== FOOTER ===== */
   footer{
