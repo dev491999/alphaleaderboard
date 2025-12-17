@@ -247,14 +247,14 @@ tr.dnf .time{
 
 
 /* MOBILE */
-/* Header grid areas (for mobile layout) */
+
+@media (max-width: 640px) {
+  /* Header grid areas (for mobile layout) */
   .logo.left { grid-area: club; }
   .header-center { grid-area: title; }
   .header-right { grid-area: arena; }
   .badge-live { grid-area: live; }
 
-@media (max-width: 640px) {
-  
  
   /* ===== BODY ===== */
   body{
