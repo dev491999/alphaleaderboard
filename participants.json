@@ -13,7 +13,7 @@
   },
   "AW004": {
     "name": "Payal Sanas",
-    "gender": "M"
+    "gender": "F"
   },
   "AW005": {
     "name": "Arya Kshirsagar",
@@ -21,7 +21,7 @@
   },
   "AW006": {
     "name": "Aakanksha B",
-    "gender": "M"
+    "gender": "F"
   },
   "AW007": {
     "name": "Dharaa S Jalan",
@@ -33,23 +33,23 @@
   },
   "AW009": {
     "name": "Aryan Dharmadhikari",
-    "gender": "F"
+    "gender": "M"
   },
   "AW010": {
     "name": "Soham Bapat",
-    "gender": "F"
+    "gender": "M"
   },
   "AW011": {
     "name": "Sameeran Mokashi",
-    "gender": "F"
+    "gender": "M"
   },
   "AW012": {
     "name": "Parth Venkatraman",
-    "gender": "F"
+    "gender": "M"
   },
   "AW013": {
     "name": "Shreeshail Chitpur",
-    "gender": "F"
+    "gender": "M"
   },
   "AW014": {
     "name": "Yashashree Patel",
@@ -57,11 +57,11 @@
   },
   "AW015": {
     "name": "Rohit chavan",
-    "gender": "F"
+    "gender": "M"
   },
   "AW016": {
     "name": "Amal Shukla",
-    "gender": "F"
+    "gender": "M"
   },
   "AW017": {
     "name": "Reshma Sarsar",
@@ -69,11 +69,11 @@
   },
   "AW018": {
     "name": "Gandharva Gavai",
-    "gender": "F"
+    "gender": "M"
   },
   "AW019": {
     "name": "Vipul Jayantilal mali",
-    "gender": "F"
+    "gender": "M"
   },
   "AW020": {
     "name": "Minakshi Deokar",
@@ -81,7 +81,7 @@
   },
   "AW021": {
     "name": "Ayush Yadav",
-    "gender": "F"
+    "gender": "M"
   },
   "AW022": {
     "name": "Srushti Bhujbal",
@@ -89,27 +89,27 @@
   },
   "AW023": {
     "name": "Chaitanya Bidkar",
-    "gender": "F"
+    "gender": "M"
   },
   "AW024": {
     "name": "Shriansh Vaishnava",
-    "gender": "F"
+    "gender": "M"
   },
   "AW025": {
     "name": "Samridh Saini",
-    "gender": "F"
+    "gender": "M"
   },
   "AW026": {
     "name": "Aditya Anand Mali",
-    "gender": "F"
+    "gender": "M"
   },
   "AW027": {
     "name": "Dhruv chaudhary",
-    "gender": "F"
+    "gender": "M"
   },
   "AW028": {
     "name": "AYUSH JAIN",
-    "gender": "F"
+    "gender": "M"
   },
   "AW029": {
     "name": "Meenal Deogaonkar",
@@ -117,15 +117,15 @@
   },
   "AW030": {
     "name": "Shreyas",
-    "gender": "F"
+    "gender": "M"
   },
   "AW031": {
     "name": "Arjun Vishwakarma",
-    "gender": "F"
+    "gender": "M"
   },
   "AW032": {
     "name": "Atharva Sunder",
-    "gender": "F"
+    "gender": "M"
   },
   "AW033": {
     "name": "Anaya ghate",
@@ -133,666 +133,10 @@
   },
   "AW034": {
     "name": "Vishal Shivmurat Chaurasiya",
-    "gender": "F"
+    "gender": "M"
   },
   "AW035": {
     "name": "Siddhi Yogesh Bhosekar",
-    "gender": "F"
-  },
-  "AW036": {
-    "name": "Kunal Kshirsagar",
-    "gender": "F"
-  },
-  "AW037": {
-    "name": "Ameya Phatak",
-    "gender": "F"
-  },
-  "AW038": {
-    "name": "Bhargavi Salunkhe",
-    "gender": "F"
-  },
-  "AW039": {
-    "name": "Bhuvanesh Kamble",
-    "gender": "F"
-  },
-  "AW040": {
-    "name": "Atharv Balkawade",
-    "gender": "F"
-  },
-  "AW041": {
-    "name": "Rutik Sanjay Shirke",
-    "gender": "F"
-  },
-  "AW042": {
-    "name": "Adhya Dubey",
-    "gender": "F"
-  },
-  "AW043": {
-    "name": "Jay Shah",
-    "gender": "F"
-  },
-  "AW044": {
-    "name": "Amit Pile",
-    "gender": "F"
-  },
-  "AW045": {
-    "name": "Swaraj Chavan",
-    "gender": "F"
-  },
-  "AW046": {
-    "name": "Nikita Kakade",
-    "gender": "F"
-  },
-  "AW047": {
-    "name": "Akash Kelkar",
-    "gender": "F"
-  },
-  "AW048": {
-    "name": "Snehal Khemnar",
-    "gender": "F"
-  },
-  "AW049": {
-    "name": "Atharva Kakade",
-    "gender": "F"
-  },
-  "AW050": {
-    "name": "Parth Pramod Ligade",
-    "gender": "F"
-  },
-  "AW051": {
-    "name": "Pushkar zimbre",
-    "gender": "F"
-  },
-  "AW052": {
-    "name": "Deepak Saraswat",
-    "gender": "F"
-  },
-  "AW053": {
-    "name": "Aadya Kadam",
-    "gender": "F"
-  },
-  "AW054": {
-    "name": "Prajwal Dnyaneshwar Waghole",
-    "gender": "F"
-  },
-  "AW055": {
-    "name": "Mitali Bhindwale",
-    "gender": "F"
-  },
-  "AW056": {
-    "name": "Guru",
-    "gender": "F"
-  },
-  "AW057": {
-    "name": "Saurabh Badole",
-    "gender": "F"
-  },
-  "AW058": {
-    "name": "Sangram Rajput",
-    "gender": "F"
-  },
-  "AW059": {
-    "name": "Akshay Shinde",
-    "gender": "F"
-  },
-  "AW060": {
-    "name": "Tanvi Bhargaw",
-    "gender": "F"
-  },
-  "AW061": {
-    "name": "Kshitija Purohit",
-    "gender": "F"
-  },
-  "AW062": {
-    "name": "Rutvi Paithankar",
-    "gender": "F"
-  },
-  "AW063": {
-    "name": "Varadraj Boramanikar",
-    "gender": "F"
-  },
-  "AW064": {
-    "name": "Vivaan",
-    "gender": "F"
-  },
-  "AW065": {
-    "name": "Chaitanya Ashtekar",
-    "gender": "F"
-  },
-  "AW066": {
-    "name": "Saundarya Tambe",
-    "gender": "F"
-  },
-  "AW067": {
-    "name": "LINO SHINU",
-    "gender": "F"
-  },
-  "AW068": {
-    "name": "Shriya velhal",
-    "gender": "F"
-  },
-  "AW069": {
-    "name": "Sakshi Pednekar",
-    "gender": "F"
-  },
-  "AW070": {
-    "name": "Piyush Kolhatkar",
-    "gender": "F"
-  },
-  "AW071": {
-    "name": "Malhar Tamhankar",
-    "gender": "F"
-  },
-  "AW072": {
-    "name": "Neel Malkhare",
-    "gender": "F"
-  },
-  "AW073": {
-    "name": "Devanshi angia",
-    "gender": "F"
-  },
-  "AW074": {
-    "name": "Sushant Singh",
-    "gender": "F"
-  },
-  "AW075": {
-    "name": "Aditya Mali",
-    "gender": "F"
-  },
-  "AW076": {
-    "name": "Akash ugale",
-    "gender": "F"
-  },
-  "AW077": {
-    "name": "Rohan Malode",
-    "gender": "F"
-  },
-  "AW078": {
-    "name": "Krishna rathi",
-    "gender": "F"
-  },
-  "AW079": {
-    "name": "Richa Saraswat",
-    "gender": "F"
-  },
-  "AW080": {
-    "name": "Ketaki Cholkar",
-    "gender": "M"
-  },
-  "AW081": {
-    "name": "Shivali Godkhindi",
-    "gender": "M"
-  },
-  "AW082": {
-    "name": "Abhishek Deshpande",
-    "gender": "M"
-  },
-  "AW083": {
-    "name": "Rucha Kardile",
-    "gender": "M"
-  },
-  "AW084": {
-    "name": "Vaishnavi Rajkumar Padamwar",
-    "gender": "M"
-  },
-  "AW085": {
-    "name": "Akshay navnath khod",
-    "gender": "M"
-  },
-  "AW086": {
-    "name": "Amruta",
-    "gender": "M"
-  },
-  "AW087": {
-    "name": "Gayatri Girish Darode",
-    "gender": "M"
-  },
-  "AW088": {
-    "name": "Adit Godbole",
-    "gender": "M"
-  },
-  "AW089": {
-    "name": "Vrushali Sanjay Khutwad",
-    "gender": "M"
-  },
-  "AW090": {
-    "name": "Sahil Khare",
-    "gender": "M"
-  },
-  "AW091": {
-    "name": "Sarthak",
-    "gender": "M"
-  },
-  "AW092": {
-    "name": "Gitesh suranje",
-    "gender": "M"
-  },
-  "AW093": {
-    "name": "Varad kadam",
-    "gender": "M"
-  },
-  "AW094": {
-    "name": "Vinayak Deshmukh",
-    "gender": "M"
-  },
-  "AW095": {
-    "name": "Vinayak Deshmukh",
-    "gender": "M"
-  },
-  "AW096": {
-    "name": "Atharva Kudale",
-    "gender": "M"
-  },
-  "AW097": {
-    "name": "Inderneel Bhosale",
-    "gender": "M"
-  },
-  "AW098": {
-    "name": "Akash",
-    "gender": "M"
-  },
-  "AW099": {
-    "name": "Shubham Raut",
-    "gender": "M"
-  },
-  "AW100": {
-    "name": "Nishant Thengal",
-    "gender": "M"
-  },
-  "AW101": {
-    "name": "Shubham Maruti Temghare",
-    "gender": "M"
-  },
-  "AW102": {
-    "name": "Soham Phutane",
-    "gender": "M"
-  },
-  "AW103": {
-    "name": "Aryaman Todkar",
-    "gender": "M"
-  },
-  "AW104": {
-    "name": "Chetan Sikchi",
-    "gender": "M"
-  },
-  "AW105": {
-    "name": "Parth Deokar",
-    "gender": "M"
-  },
-  "AW106": {
-    "name": "Jaideep Aher",
-    "gender": "M"
-  },
-  "AW107": {
-    "name": "Shubham Nagargoje",
-    "gender": "M"
-  },
-  "AW108": {
-    "name": "Capt Sagar bobade",
-    "gender": "M"
-  },
-  "AW109": {
-    "name": "Capt sagar bobade",
-    "gender": "M"
-  },
-  "AW110": {
-    "name": "Capt sagar",
-    "gender": "M"
-  },
-  "AW111": {
-    "name": "Pranav Jadhao",
-    "gender": "M"
-  },
-  "AW112": {
-    "name": "Sagar Wankhade",
-    "gender": "M"
-  },
-  "AW113": {
-    "name": "Tohid Javid Maniyar",
-    "gender": "M"
-  },
-  "AW114": {
-    "name": "Nayan Kolhe",
-    "gender": "M"
-  },
-  "AW115": {
-    "name": "Ganesh Tayde",
-    "gender": "M"
-  },
-  "AW116": {
-    "name": "Sarthak Dhobale",
-    "gender": "M"
-  },
-  "AW117": {
-    "name": "Abhinav Limaye",
-    "gender": "M"
-  },
-  "AW118": {
-    "name": "Saket Koppineedi",
-    "gender": "M"
-  },
-  "AW119": {
-    "name": "Atharva  Karnik",
-    "gender": "M"
-  },
-  "AW120": {
-    "name": "Aditya Khilare",
-    "gender": "M"
-  },
-  "AW121": {
-    "name": "Aditya Khilare",
-    "gender": "M"
-  },
-  "AW122": {
-    "name": "Kunal kandhare",
-    "gender": "M"
-  },
-  "AW123": {
-    "name": "Jagdish Rahul Sikchi",
-    "gender": "M"
-  },
-  "AW124": {
-    "name": "Arpita",
-    "gender": "M"
-  },
-  "AW125": {
-    "name": "Kunal",
-    "gender": "M"
-  },
-  "AW126": {
-    "name": "Aamod Kale",
-    "gender": "M"
-  },
-  "AW127": {
-    "name": "Akshay Jagannath Mohite",
-    "gender": "M"
-  },
-  "AW128": {
-    "name": "Varda Sanjay Dahake",
-    "gender": "M"
-  },
-  "AW129": {
-    "name": "Shreeyash Raut",
-    "gender": "M"
-  },
-  "AW130": {
-    "name": "Adwait joshi",
-    "gender": "M"
-  },
-  "AW131": {
-    "name": "Aditya Mali",
-    "gender": "M"
-  },
-  "AW132": {
-    "name": "Anisha singh",
-    "gender": "M"
-  },
-  "AW133": {
-    "name": "Narendra Kedar",
-    "gender": "M"
-  },
-  "AW134": {
-    "name": "Dhruv Jategaonkar",
-    "gender": "M"
-  },
-  "AW135": {
-    "name": "Arham sancheti",
-    "gender": "M"
-  },
-  "AW136": {
-    "name": "Moli agrawal",
-    "gender": "M"
-  },
-  "AW137": {
-    "name": "Gayatri Kharadkar",
-    "gender": "M"
-  },
-  "AW138": {
-    "name": "Aadi Shinde",
-    "gender": "M"
-  },
-  "AW139": {
-    "name": "VAIDEHI ANAND LAVATE",
-    "gender": "M"
-  },
-  "AW140": {
-    "name": "Siddharth Dengle",
-    "gender": "M"
-  },
-  "AW141": {
-    "name": "Jay Umap",
-    "gender": "M"
-  },
-  "AW142": {
-    "name": "Krishna",
-    "gender": "M"
-  },
-  "AW143": {
-    "name": "Krishna",
-    "gender": "M"
-  },
-  "AW144": {
-    "name": "Omkar Shashank Belsare",
-    "gender": "M"
-  },
-  "AW145": {
-    "name": "Abhishek Kulkarni",
-    "gender": "F"
-  },
-  "AW146": {
-    "name": "Tejas Kulkarni",
-    "gender": "F"
-  },
-  "AW147": {
-    "name": "Hrishikesh Ansingkar",
-    "gender": "F"
-  },
-  "AW148": {
-    "name": "Madhura Sandbhor",
-    "gender": "F"
-  },
-  "AW149": {
-    "name": "Sakshi",
-    "gender": "F"
-  },
-  "AW150": {
-    "name": "Ketan Joshi",
-    "gender": "F"
-  },
-  "AW151": {
-    "name": "Sanskar sopan rathod",
-    "gender": "F"
-  },
-  "AW152": {
-    "name": "Mayuri Kirloskar",
-    "gender": "F"
-  },
-  "AW153": {
-    "name": "Aamod Kale",
-    "gender": "F"
-  },
-  "AW154": {
-    "name": "Simran chetri",
-    "gender": "F"
-  },
-  "AW155": {
-    "name": "Simran chetri",
-    "gender": "F"
-  },
-  "AW156": {
-    "name": "Anveet Mahesh Thombare",
-    "gender": "F"
-  },
-  "AW157": {
-    "name": "Suyash Chaudhari",
-    "gender": "F"
-  },
-  "AW158": {
-    "name": "Shipra kumari",
-    "gender": "F"
-  },
-  "AW159": {
-    "name": "Omkar Dahiwal",
-    "gender": "F"
-  },
-  "AW160": {
-    "name": "Mayuresh Natu",
-    "gender": "F"
-  },
-  "AW161": {
-    "name": "Heramb Salunkhe",
-    "gender": "F"
-  },
-  "AW162": {
-    "name": "Hitesh Sonawane",
-    "gender": "F"
-  },
-  "AW163": {
-    "name": "Shaunak Gokhale",
-    "gender": "F"
-  },
-  "AW164": {
-    "name": "Rutvi Paithankar",
-    "gender": "F"
-  },
-  "AW165": {
-    "name": "Harshwardhan Pasalkar",
-    "gender": "F"
-  },
-  "AW166": {
-    "name": "Sanchit Appasaheb Shinde",
-    "gender": "F"
-  },
-  "AW167": {
-    "name": "Saheel Gangote",
-    "gender": "F"
-  },
-  "AW168": {
-    "name": "Kiran Shridhar Gunjal",
-    "gender": "F"
-  },
-  "AW169": {
-    "name": "prathamesh",
-    "gender": "F"
-  },
-  "AW170": {
-    "name": "Aashish Karwa",
-    "gender": "F"
-  },
-  "AW171": {
-    "name": "Varad Khisti",
-    "gender": "F"
-  },
-  "AW172": {
-    "name": "Sahil Joshi",
-    "gender": "F"
-  },
-  "AW173": {
-    "name": "Shrohit kalambkar",
-    "gender": "F"
-  },
-  "AW174": {
-    "name": "Sachetas Sameer gandhi",
-    "gender": "F"
-  },
-  "AW175": {
-    "name": "Atharv Yadav",
-    "gender": "F"
-  },
-  "AW176": {
-    "name": "Rushikesh Chougule",
-    "gender": "F"
-  },
-  "AW177": {
-    "name": "Diksha Pandit",
-    "gender": "F"
-  },
-  "AW178": {
-    "name": "Mrunal Mungi",
-    "gender": "F"
-  },
-  "AW179": {
-    "name": "Sohail khan",
-    "gender": "F"
-  },
-  "AW180": {
-    "name": "Pious gandhi",
-    "gender": "F"
-  },
-  "AW181": {
-    "name": "Yuvraj Vilas Shete",
-    "gender": "F"
-  },
-  "AW182": {
-    "name": "Nikhil",
-    "gender": "F"
-  },
-  "AW183": {
-    "name": "Neeraj Lembhe",
-    "gender": "F"
-  },
-  "AW184": {
-    "name": "Srijan Gauraha",
-    "gender": "F"
-  },
-  "AW185": {
-    "name": "Sarvesh Parkhe",
-    "gender": "F"
-  },
-  "AW186": {
-    "name": "Rohit Panshikar",
-    "gender": "F"
-  },
-  "AW187": {
-    "name": "Varad Patwardhan",
-    "gender": "F"
-  },
-  "AW188": {
-    "name": "Prasad",
-    "gender": "F"
-  },
-  "AW189": {
-    "name": "Jagdish Bokil",
-    "gender": "F"
-  },
-  "AW190": {
-    "name": "Vipul mali",
-    "gender": "F"
-  },
-  "AW191": {
-    "name": "Fatehraj Jetharam Suthar",
-    "gender": "F"
-  },
-  "AW192": {
-    "name": "Andrea Dsouza",
-    "gender": "F"
-  },
-  "AW193": {
-    "name": "Sneha Premanand Kamble",
-    "gender": "F"
-  },
-  "AW194": {
-    "name": "Aaryan Dusane",
-    "gender": "F"
-  },
-  "AW195": {
-    "name": "Rohan Ram Sarode",
-    "gender": "F"
-  },
-  "AW196": {
-    "name": "Om Mahajan",
-    "gender": "F"
-  },
-  "AW197": {
-    "name": "Hardik Bora",
-    "gender": "F"
-  },
-  "AW198": {
-    "name": "Karan Karnad",
-    "gender": "F"
-  },
-  "AW199": {
-    "name": "Shriyash Bhamare",
     "gender": "F"
   }
 }
