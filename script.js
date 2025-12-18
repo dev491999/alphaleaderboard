@@ -16,12 +16,7 @@ const metaUpdated=document.getElementById("meta-updated");
 
 let PARTICIPANTS={},DATA=[],ACTIVE="M";
 
-//apd config 
-const APD_CONFIG = {
-  enabled: false,
-  mode: null,        // 'percentile' | 'relative' | 'absolute'
-  value: null        // number (future)
-};
+
 
 
 
@@ -96,20 +91,12 @@ function render() {
   updateMeta(finishers.length);
   podiumTitle.textContent=ACTIVE==="M"?"Top 3 – Men":"Top 3 – Women";
 
-  if (ACTIVE === "APD") {
-  leaderboard.innerHTML =
-    `<div class="empty">APD qualification criteria not announced yet.</div>`;
-  podium.innerHTML = "";
-  podiumTitle.textContent = "APD Qualifier";
-  updateMeta(0);
-  return;
-}
 }
 //apd function 
-function getAPDQualified(list){
-  if(!APD_CONFIG.enabled) return [];
+//function getAPDQualified(finishers){
+ // if(!APD_CONFIG.enabled) return [];
   // future logic goes here
-}
+//}
 document.querySelectorAll(".tab").forEach(b=>{
   b.onclick=()=>{
     document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));

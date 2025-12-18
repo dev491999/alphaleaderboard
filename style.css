@@ -115,16 +115,7 @@ main{padding:18px 22px 22px}
   font-weight:600;
   cursor:pointer;
 }
-.tab-disabled{
-  opacity:0.45;
-  cursor:not-allowed;
-  background:transparent;
-  border-style:dashed;
-}
 
-.tab-disabled:hover{
-  background:transparent;
-}
 .tab.active{
   background:var(--primary);
   color:#fff;
