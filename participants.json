@@ -97,11 +97,11 @@
   },
   "AW025": {
     "name": "Jay",
-    "gender": "M"
+    "gender": "F"
   },
   "AW026": {
     "name": "Aishanya",
-    "gender": "F"
+    "gender": "M"
   },
   "AW027": {
     "name": "Mahesh Telange",
@@ -165,7 +165,7 @@
   },
   "AW042": {
     "name": "Anmol tapshalkar",
-    "gender": "M"
+    "gender": "F"
   },
   "AW043": {
     "name": "neha",
@@ -173,7 +173,7 @@
   },
   "AW044": {
     "name": "alisha chavan",
-    "gender": "F"
+    "gender": "M"
   },
   "AW045": {
     "name": "kunal phirke",
@@ -189,19 +189,19 @@
   },
   "AW048": {
     "name": "sameer shrivastava",
-    "gender": "M"
+    "gender": "F"
   },
   "AW049": {
     "name": "Bhoomi Jain",
-    "gender": "F"
+    "gender": "M"
   },
   "AW050": {
     "name": "karan nemade",
-    "gender": "M"
+    "gender": "F"
   },
   "AW051": {
     "name": "pranita date",
-    "gender": "F"
+    "gender": "M"
   },
   "AW052": {
     "name": "Rajdeep",
@@ -237,11 +237,11 @@
   },
   "AW060": {
     "name": "Pranav sonawane",
-    "gender": "M"
+    "gender": "F"
   },
   "AW061": {
     "name": "swapnali pawar",
-    "gender": "F"
+    "gender": "M"
   },
   "AW062": {
     "name": "nishikant dongare",
@@ -301,7 +301,7 @@
   },
   "AW076": {
     "name": "Ayush Yadav",
-    "gender": "M"
+    "gender": "F"
   },
   "AW077": {
     "name": "Bhoomi Sable",
@@ -309,15 +309,15 @@
   },
   "AW078": {
     "name": "Sonali Poojari",
-    "gender": "F"
+    "gender": "M"
   },
   "AW079": {
     "name": "Aditya Mahale",
-    "gender": "M"
+    "gender": "F"
   },
   "AW080": {
     "name": "Diksha Sheregar",
-    "gender": "F"
+    "gender": "M"
   },
   "AW081": {
     "name": "Onick Bathija",
@@ -325,11 +325,11 @@
   },
   "AW082": {
     "name": "abhinav yeole",
-    "gender": "M"
+    "gender": "F"
   },
   "AW083": {
     "name": "nidhi chudekar",
-    "gender": "F"
+    "gender": "M"
   },
   "AW084": {
     "name": "harshad bankar",
@@ -345,7 +345,7 @@
   },
   "AW087": {
     "name": "sahil ahuja",
-    "gender": "M"
+    "gender": "F"
   },
   "AW088": {
     "name": "Anushka",
@@ -353,7 +353,7 @@
   },
   "AW089": {
     "name": "kiona keswani",
-    "gender": "F"
+    "gender": "M"
   },
   "AW090": {
     "name": "rugved patil",
@@ -369,11 +369,11 @@
   },
   "AW093": {
     "name": "rohit",
-    "gender": "M"
+    "gender": "F"
   },
   "AW094": {
     "name": "tanisha jain",
-    "gender": "F"
+    "gender": "M"
   },
   "AW095": {
     "name": "ganesh mundhe",
@@ -400,8 +400,8 @@
     "gender": "M"
   },
   "AW101": {
-    "name": "Ashutosh",
-    "gender": "M"
+    "name": "",
+    "gender": ""
   },
   "AW102": {
     "name": "",
@@ -588,10 +588,6 @@
     "gender": ""
   },
   "AW148": {
-    "name": "",
-    "gender": ""
-  },
-  "AW149": {
     "name": "",
     "gender": ""
   }
